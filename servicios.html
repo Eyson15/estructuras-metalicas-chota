@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Servicios — Estructuras Metálicas Chota</title>
+  <meta name="description" content="Servicios de estructuras metálicas, diseño, verificación y fabricación." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('header.html')
+      .then(res => { if (!res.ok) throw new Error('No header'); return res.text(); })
+      .then(html => document.getElementById('site-header').innerHTML = html)
+      .catch(()=>{/* fallback si se abre por file:// */});
+  </script>
+
+  <!-- HERO -->
+  <header class="hero-page sobre" style="background-image: url('assets/FondoParaTodos.png');">
+    <div class="content">
+  </div>
+  </footer>
+  
+  <script src="site.js"></script>
+      <h1>Nuestros Servicios</h1>
+      <p class="hero-sub">Soluciones metálicas innovadoras, diseño, verificación y fabricación con calidad garantizada.</p>
+    </div>
+  </header>
+
+  <!-- SECCIÓN: Servicios principales -->
+  <section class="servicios-detail full-bleed" aria-labelledby="servicios-title" style="background-color: #d1e1fa;">
+    <div class="container">
+      <h2 id="servicios-title" class="section-title">Servicios <span class="accent-blue">que ofrecemos</span></h2>
+      <p class="servicios-subtitle">Estructuras Metálicas Chota es una empresa especializada en construcciones metálicas que brinda los siguientes servicios:</p>
+
+      <div class="servicios-grid-foto">
+        <!-- Servicio 1: Análisis y Diseño -->
+        <article class="servicio-foto-card" id="analisis" style="background-image: url('assets/InicioAnálisisyDiseñoEstructural.webp');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Análisis y Diseño Estructural</h3>
+            <a href="#detalle-analisis" class="servicio-link" data-target="detalle-analisis">Ver servicio</a>
+          </div>
+        </article>
+
+        <!-- Servicio 2: Verificación -->
+        <article class="servicio-foto-card" id="verificacion" style="background-image: url('assets/InicioVerificaciónEstructural.webp');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Verificación Estructural</h3>
+            <a href="#detalle-verificacion" class="servicio-link">Ver servicio</a>
+          </div>
+        </article>
+
+        <!-- Servicio 3: Fabricación y Montaje -->
+        <article class="servicio-foto-card" id="montaje" style="background-image: url('assets/FabricacionyMontaje.png');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Fabricación y Montaje de Construcciones Metálicas</h3>
+            <a href="#detalle-montaje" class="servicio-link">Ver servicio</a>
+          </div>
+        </article>
+
+        <!-- Servicio 4: Instalación de Coberturas -->
+        <article class="servicio-foto-card" id="coberturas" style="background-image: url('assets/Montaje.png');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Instalación de Techos</h3>
+            <a href="#detalle-coberturas" class="servicio-link" data-target="detalle-coberturas">Ver servicio</a>
+          </div>
+        </article>
+
+        <!-- Servicio 5: Diseño y Fabricación de Puertas -->
+        <article class="servicio-foto-card" id="puertas" style="background-image: url('assets/Puertasyventanas.png');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Diseño y Fabricación de Puertas y Ventanas Metálicas</h3>
+            <a href="#detalle-puertas" class="servicio-link">Ver servicio</a>
+          </div>
+        </article>
+
+        <!-- Servicio 6: Obras Civiles -->
+        <article class="servicio-foto-card" id="civiles" style="background-image: url('assets/ServisiosMantenimiento.png');">
+          <div class="servicio-overlay"></div>
+          <div class="servicio-content">
+            <!-- ...icono... -->
+            <h3>Mantenimiento de Estructuras Metálicas</h3>
+            <a href="#detalle-civiles" class="servicio-link" data-target="detalle-civiles">Ver servicio</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalles: también full-bleed y con container-inner -->
+  <section class="full-bleed">
+    <div class="container">
+      <div class="container-inner">
+        <!-- SECCIONES DE DETALLE POR SERVICIO -->
+        <!-- DETALLE: Análisis y Diseño -->
+        <article id="detalle-analisis" class="servicio-detalle" aria-hidden="true">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/InicioAnálisisyDiseñoEstructural.jpg')"></div>
+            <div class="detalle-content">
+              <h2>Análisis y Diseño Estructural</h2>
+              <p><strong>Enfoque Proactivo:</strong> Desarrollo de nuevos sistemas estructurales o elementos desde cero, evaluando optimización y costos.</p>
+              <p><strong>Cálculos y Modelado:</strong> Análisis de cargas (muertas, vivas, viento, sismo), modelado en software y comprobación de secciones.</p>
+              <p><strong>Normatividad y Creatividad:</strong> Diseño conforme a normativas vigentes optimizando material y procesos constructivos.</p>
+              <p><strong>Generación de Planos:</strong> Planos ejecutivos, especificaciones y listado de piezas para fabricación.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- DETALLE: Verificación Estructural -->
+        <article id="detalle-verificacion" class="servicio-detalle">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/InicioVerificaciónEstructural.png')"></div>
+            <div class="detalle-content">
+              <h2>Verificación Estructural</h2>
+              <p>Comprobación de estructuras existentes: inspecciones, cálculo de refuerzos, evaluación de capacidad portante y recomendaciones de reparación.</p>
+              <ul>
+                <li>Inspección técnica y diagnóstico.</li>
+                <li>Cálculo de capacidad y verificación frente a normas.</li>
+                <li>Informe con soluciones y presupuesto.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- DETALLE: Fabricación y Montaje -->
+        <article id="detalle-montaje" class="servicio-detalle">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/FabricacionyMontaje.png')"></div>
+            <div class="detalle-content">
+              <h2>Montaje de Construcciones Metálicas</h2>
+              <p>Especialistas en el montaje de estructuras metálicas para proyectos industriales, comerciales y residenciales. Realizamos un servicio completo que garantiza precisión, seguridad y cumplimiento técnico en cada etapa.</p>
+              <ol>
+                <li>Recepción y verificación de piezas prefabricadas.</li>
+                <li>Aplicación de pintura y protección anticorrosiva según requerimiento.</li>
+                <li>Montaje en obra con supervisión técnica y control de calidad.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <!-- DETALLE: Instalación de Coberturas -->
+        <article id="detalle-coberturas" class="servicio-detalle">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/Montaje.png')"></div>
+            <div class="detalle-content">
+              <h2>Instalación de Techos</h2>
+              <p>Brindamos soluciones integrales en la instalación de todo tipo de techos, desde estructuras parabólicas hasta coberturas para viviendas, comercios e industrias.</p>
+              <p>Ofrecemos suministro de materiales, armado estructural y sistemas de fijación de alta calidad, asegurando resistencia, durabilidad y un acabado profesional.</p>
+              <p>Garantizamos protección, seguridad y terminaciones de acuerdo con los requerimientos específicos de cada proyecto.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- DETALLE: Puertas y Ventanas -->
+        <article id="detalle-puertas" class="servicio-detalle">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/Puertasyventanas.png')"></div>
+            <div class="detalle-content">
+              <h2>Diseño y Fabricación de Puertas y Ventanas Metálicas</h2>
+              <p>Ofrecemos soluciones a medida en puertas y ventanas metálicas para uso residencial, comercial e industrial. Fabricamos productos resistentes y funcionales, incluyendo portones, puertas cortafuego y ventanas de seguridad, utilizando materiales de alta calidad.</p>
+              <p>Garantizamos precisión en el diseño, acabados profesionales y montaje especializado con herrajes y accesorios duraderos.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- DETALLE: Obras Civiles -->
+        <article id="detalle-civiles" class="servicio-detalle">
+          <a class="detalle-close" href="#servicios-title" aria-label="Cerrar detalle">✕</a>
+          <div class="detalle-grid">
+            <div class="detalle-figure" style="background-image:url('assets/ServisiosMantenimiento.png')"></div>
+            <div class="detalle-content">
+              <h2>Mantenimiento de Estructuras Metálicas</h2>
+                <p>Realizamos mantenimiento preventivo y correctivo de estructuras metálicas para instalaciones industriales, comerciales y residenciales. Nuestro servicio garantiza la prolongación de la vida útil de la estructura y el óptimo desempeño de cada componente.</p>
+                <p>Incluye inspección técnica, limpieza, reparación de deformaciones, refuerzo estructural, reemplazo de elementos dañados y aplicación de protección anticorrosiva.</p>
+                <p>Trabajamos con métodos seguros, personal especializado y estándares de calidad que aseguran un mantenimiento confiable, duradero y adaptado a las necesidades del proyecto.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+  <!-- Script: mostrar/ocultar detalles sin recarga -->
+  <script>
+    (function(){
+      const links = document.querySelectorAll('.servicio-link');
+      const detalles = document.querySelectorAll('.servicio-detalle');
+      const serviciosTitle = document.getElementById('servicios-title');
+
+      function hideAll() {
+        detalles.forEach(d => {
+          d.classList.remove('active');
+          d.setAttribute('aria-hidden','true');
+        });
+      }
+
+      links.forEach(a => {
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          const targetId = this.dataset.target || this.getAttribute('href').replace('#','');
+          const target = document.getElementById(targetId);
+          if (!target) return;
+          // si ya está abierto, cerrarlo
+          if (target.classList.contains('active')) {
+            hideAll();
+            serviciosTitle.scrollIntoView({behavior:'smooth', block:'center'});
+            return;
+          }
+          hideAll();
+          target.classList.add('active');
+          target.setAttribute('aria-hidden','false');
+          // desplazar suavemente a la sección detalle (debajo del grid)
+          // dejamos un pequeño retardo para asegurar render
+          setTimeout(()=> {
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            // si quieres offset para header fijo, usa scrollBy en lugar de scrollIntoView
+            // window.scrollBy(0, -80);
+          }, 80);
+        });
+      });
+
+      // cerrar con la X (captura la acción y oculta en vez de seguir el anchor)
+      document.querySelectorAll('.detalle-close').forEach(btn => {
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          const parent = this.closest('.servicio-detalle');
+          if (parent) {
+            parent.classList.remove('active');
+            parent.setAttribute('aria-hidden','true');
+          }
+          serviciosTitle.scrollIntoView({behavior:'smooth', block:'center'});
+        });
+      });
+
+      // ocultar al cargar
+      hideAll();
+    })();
+  </script>
+
+    <!-- WhatsApp flotante (opcional) -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- Modal / formulario WhatsApp (widget tipo chat) -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche  — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script: abrir modal y enviar a WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242'; // +51 901 165 242
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        // focus primer input (si está disponible)
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        showModal();
+      });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) hideModal(); // click fuera del contenido
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+
+        // validar campos mínimos
+        if (!nombre || !telefono) {
+          alert('Por favor ingresa tu nombre y teléfono.');
+          return;
+        }
+
+        // construir texto
+        let text = `Hola, soy ${nombre}.`;
+        text += ` Mi teléfono es ${telefono}.`;
+        text += mensaje ? ` Mensaje: ${mensaje}.` : ' (sin mensaje).';
+        text += ' — Enviado desde la web de Estructuras Metálicas Chota';
+
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+
+        // abrir en nueva pestaña (WhatsApp web o app)
+        window.open(url, '_blank');
+        hideModal();
+        form.reset();
+      });
+    })();
+  </script>
+
+  <!-- Script: animar hero y entrada de página -->
+<script>
+  (function(){
+    // animar hero y entrada de página
+    document.documentElement.classList.add('page-enter'); // opcional: anima <html>
+    document.addEventListener('DOMContentLoaded', () => {
+      // aplicar clase hero
+      const hero = document.querySelector('.hero-page');
+      if (hero) hero.classList.add('animate-hero');
+      // animar contenedores
+      const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+      mainContainers.forEach(el => el.classList.add('page-enter'));
+      // eliminar clase de entrada después de la animación para permitir reuso
+      setTimeout(()=> {
+        document.documentElement.classList.remove('page-enter');
+        mainContainers.forEach(el=> el.classList.remove('page-enter'));
+      }, 1000);
+    });
+  })();
+</script>
+</body>
+</html>

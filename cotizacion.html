@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cotizaciones — Estructuras Metálicas Chota</title>
+  <meta name="description" content="Solicita una cotización — Estructuras Metálicas Chota" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilos del formulario de cotización */
+    .quote-form-container {
+      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 30px;
+      box-shadow: 0 12px 40px rgba(13, 71, 161, 0.25);
+    }
+
+    .quote-form-container h5 {
+      color: #fff;
+      font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 24px 0;
+      letter-spacing: 0.3px;
+    }
+
+    #quote-form {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      #quote-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quote-form-left {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    #quote-form input,
+    #quote-form textarea,
+    #quote-form select {
+      padding: 14px 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      font-size: 14px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      font-family: inherit;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    #quote-form input::placeholder,
+    #quote-form textarea::placeholder,
+    #quote-form select::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    #quote-form input:focus,
+    #quote-form textarea:focus,
+    #quote-form select:focus {
+      outline: none;
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    }
+
+    #quote-form textarea {
+      min-height: 140px;
+      resize: vertical;
+      grid-column: 1 / -1;
+    }
+
+    #quote-form label {
+      grid-column: 1 / -1;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #quote-form select {
+      width: 100%;
+      color: #fff;
+    }
+
+    /* Opciones del select visible */
+    #quote-form select option {
+      background: #0d47a1;
+      color: #fff;
+      padding: 8px;
+    }
+
+    .quote-form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .quote-form-actions button {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #fff, #f5f5f5);
+      color: #0d47a1;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .quote-form-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quote-info-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      color: #fff;
+    }
+
+    .quote-info-box strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .quote-info-box p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .mini-map {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      height: 280px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .mini-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .quote-form-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 8px;
+    }
+
+    /* Modal de catálogo (adaptativo a imagen) */
+    .catalog-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .catalog-modal.open { display: flex; }
+
+    .catalog-modal .modal-inner {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+      width: auto;            /* tamaño controlado por JS según imagen */
+      max-width: 95vw;
+      max-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 420px; /* imagen + texto (se colapsa en móvil) */
+    }
+
+    .catalog-modal .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      padding: 12px;
+    }
+
+    .catalog-modal .img img {
+      display: block;
+      max-width: 100%;
+      max-height: 86vh; /* deja espacio para texto/controls */
+      width: auto;
+      height: auto;
+    }
+
+    .catalog-modal .body {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .catalog-modal h3 { font-size: 20px; margin:0; color:#0d47a1; font-weight:800; }
+    .catalog-modal p { color:#444; font-size:15px; line-height:1.5; margin:0; }
+
+    .catalog-modal .close-modal {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    @media (max-width:900px) {
+      .catalog-modal .modal-inner { grid-template-columns: 1fr; width: 96vw; }
+      .catalog-modal .body { min-width: auto; }
+      .catalog-modal .img img { max-height: 48vh; }
+    }
+     /* ========== RESPONSIVE: FORMULARIO DE COTIZACIÓN ========== */
+     @media (max-width: 800px) {
+       .quote-form-container {
+         padding: 18px 4vw;
+         border-radius: 10px;
+       }
+       #quote-form {
+         gap: 10px;
+       }
+     }
+
+     @media (max-width: 600px) {
+       .quote-form-container {
+         padding: 8px 1vw;
+         border-radius: 0;
+         margin-top: 10px;
+       }
+       #quote-form {
+         display: flex;
+         flex-direction: column;
+         gap: 0;
+       }
+       .quote-form-left {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+       }
+       .quote-form-right {
+         min-width: 0;
+         width: 100%;
+         flex: unset;
+         gap: 10px;
+       }
+       #quote-form input,
+       #quote-form textarea,
+       #quote-form select {
+         font-size: 15px;
+         padding: 12px 8px;
+       }
+       .quote-form-actions {
+         flex-direction: column;
+         gap: 8px;
+       }
+       .quote-form-actions button {
+         min-width: 0;
+         width: 100%;
+       }
+       .quote-info-box {
+         font-size: 0.97rem;
+         padding: 10px 8px;
+         margin-bottom: 8px;
+       }
+       .mini-map {
+         height: 90px;
+         margin-bottom: 4px;
+       }
+       .quote-form-note {
+         font-size: 0.91rem;
+         margin-bottom: 10px;
+       }
+     }
+
+     /* =========================
+   FIX RESPONSIVE CATALOGO
+========================= */
+
+/* Reset seguro */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Contenedor general */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* GRID DEL CATÁLOGO */
+.catalog-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* TARJETA */
+.catalog-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* IMAGEN */
+.catalog-card .thumb {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* CONTENIDO */
+.catalog-card .meta {
+  width: 100%;
+}
+
+/* BOTONES */
+.catalog-card button {
+  width: 100%;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (max-width: 900px) {
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .catalog-card {
+    border-radius: 12px;
+  }
+
+  .catalog-card .thumb {
+    height: 180px;
+  }
+
+  .catalog-card .meta h4 {
+    font-size: 15px;
+  }
+
+  .catalog-card .meta p {
+    font-size: 13px;
+  }
+
+  .catalog-card .meta > div:last-child {
+    flex-direction: column;
+  }
+
+  .catalog-card button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 360px) {
+  .catalog-card .thumb {
+    height: 150px;
+  }
+}
+
+  </style>
+</head>
+<body class="page-cotizacion">
+  <div id="site-header"></div>
+  <script>fetch('header.html').then(r=>r.ok?r.text():Promise.reject()).then(t=>document.getElementById('site-header').innerHTML=t).catch(()=>{});</script>
+
+  <header class="hero-page sobre" style="background-image: url('assets/FondoParaTodos.png');">
+    <div class="content">
+      <h1>Catálogo & Cotizaciones</h1>
+      <p class="hero-sub">Elige un producto o servicio y solicita tu cotización al instante.</p>
+    </div>
+  </header>
+
+  <main class="section-servicios">
+    <section class="catalog-section full-bleed" aria-labelledby="catalog-title" style="background-color: #d1e1fa;">
+      <div class="container">
+        <div class="catalog-toolbar" style="display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap;">
+          <h2 id="catalog-title" class="section-title" style="margin:0;">Catálogo de Productos</h2>
+          <div style="flex:1"></div>
+          <input id="catalog-search" type="search" placeholder="Buscar producto o palabra clave..." style="min-width:220px;padding:10px 12px;border-radius:8px;border:1px solid #e6eef3;">
+          <select id="catalog-filter" style="padding:10px 12px;border-radius:8px;border:1px solid #e6eef3;">
+            <option value="">Todas las categorías</option>
+            <option value="puertas">Puertas y Ventanas</option>
+            <option value="coberturas">Coberturas Metálicas</option>
+            <option value="pasamanos">Pasamanos y Barandales</option>
+            <option value="fabricacion">Fabricación y Montaje</option>
+          </select>
+        </div>
+
+        <div id="catalog-grid" class="catalog-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:40px;"></div>
+
+        <!-- Formulario de Cotización -->
+        <div class="quote-form-container">
+          <h5>📋 Solicita tu cotización ahora</h5>
+
+          <form id="quote-form" novalidate>
+            <div class="quote-form-left">
+              <input name="empresa" type="text" placeholder="Empresa / Nombre" required>
+              <input name="telefono" type="tel" placeholder="Teléfono" required>
+              <input name="email" type="email" placeholder="Correo electrónico" required>
+              <input name="ubicacion" id="ubicacion-input" type="text" placeholder="Ubicación del proyecto">
+
+              <label>
+                Producto / Servicio
+                <select id="quote-product" name="producto" style="width:100%;">
+                  <option value="">(Selecciona un producto o usa "Cotizar")</option>
+                </select>
+              </label>
+
+              <textarea name="descripcion" placeholder="Descripción del proyecto (medidas, uso, prioridades, presupuesto, cronograma)..." required></textarea>
+
+              <div class="quote-form-actions">
+                <button type="submit" class="btn-primary">✓ Enviar solicitud</button>
+                <button type="button" class="btn-secondary" id="cotizar-wsp">💬 WhatsApp</button>
+                <button type="reset" class="btn-secondary" style="flex-basis:100px">Limpiar</button>
+              </div>
+            </div>
+
+            <div class="quote-form-right">
+              <div class="quote-info-box">
+                <strong>📍 Ubicación de referencia</strong>
+                <p>Coordenadas: 6°33'25.7"S 78°38'54.6"W</p>
+                <p style="margin-top:8px;font-size:12px;">Chota, Cajamarca — Perú</p>
+              </div>
+
+              <div class="quote-info-box">
+                <strong>⏱️ Tiempo de respuesta</strong>
+                <p>Responderemos tu solicitud en máximo 24 horas</p>
+              </div>
+
+              <div class="quote-info-box">
+                <strong>✓ Incluye:</strong>
+                <p>✓ Cotización detallada<br/>✓ Planos técnicos<br/>✓ Cronograma<br/>✓ Asesoría personalizada</p>
+              </div>
+
+              <div class="mini-map">
+                <iframe src="https://www.google.com/maps?q=-6.557139,-78.6485&hl=es&z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+
+              <p class="quote-form-note">Arrastra el mapa para ajustar la ubicación aproximada del proyecto</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+  <script>
+    (function(){
+      // Datos: 10 productos por categoría
+      const products = [
+        // PUERTAS (12) Y VENTANAS (12)
+        { category:'puertas', item:'Puerta Moderna Principal', price:1300, img:'assets/puerta1.jpg' },
+        { category:'puertas', item:'Portón Acceso Doble Gris', price:4000, img:'assets/puerta2.jpg' },
+        { category:'puertas', item:'Portón vehicular y Puerta Peatonal', price:5000, img:'assets/puerta3.jpg' },
+        { category:'puertas', item:'Puerta Principal con Ventanas Verticales', price:3500, img:'assets/puerta4.jpg' },
+        { category:'puertas', item:'Puerta Principal con Acabado Tipo Madera', price:4500, img:'assets/puerta5.jpg' },
+        { category:'puertas', item:'Portón de Acceso con Triple Hoja', price:3500, img:'assets/puerta6.jpg' },
+        { category:'puertas', item:'Portón y Puerta de Acceso Peatonal', price:8000, img:'assets/puerta7.jpg' },
+        { category:'puertas', item:'Puerta Principal con Acabado Moderno', price:5000, img:'assets/puerta8.jpg' },
+        { category:'puertas', item:'Puerta con Acabado Tipo Madera', price:1500, img:'assets/puerta9.jpg' },
+        { category:'puertas', item:'Puerta con Rejilla Ventilación', price:2500, img:'assets/puerta10.jpg' },
+        {category:'puertas', item:'Portón Principal y Puerta de Acceso', price:3500, img:'assets/puerta11.png' },
+        {category:'puertas', item:'Puerta Principal', price:3500, img:'assets/puerta12.jpg' },
+
+        {category:'puertas', item:'Ventana de Aluminio', price:300, img:'assets/ventana1.webp' },
+        {category:'puertas', item:'Ventana Moderna Blanca', price:500, img:'assets/ventana2.webp' },
+        {category:'puertas', item:'Ventana Negra Fija con Rejilla', price:800, img:'assets/ventana3.webp' },
+        {category:'puertas', item:'Ventana Blanca Fija con Rejilla', price:950, img:'assets/ventana4.webp' },
+        {category:'puertas', item:'Ventana Moderna de Piso a Techo con Abatible Doble', price:320, img:'assets/ventana5.webp' },
+        {category:'puertas', item:'Ventana con Acabado Tipo Madera', price:450, img:'assets/ventana6.webp' },
+        {category:'puertas', item:'Ventana Fija Aluminio con Abatible Doble', price:300, img:'assets/ventana7.webp' },
+        {category:'puertas', item:'Ventana Fija con diseño', price:340, img:'assets/ventana8.webp' },
+        {category:'puertas', item:'Ventana con Cobertor Negro Moderno', price:350, img:'assets/ventana9.webp' },
+        {category:'puertas', item:'Ventana con Cobertor Blanco Moderno', price:680, img:'assets/ventana10.webp' },
+        {category:'puertas', item:'Ventana Abatible con Diseño Arqueado', price:350, img:'assets/ventana11.webp' },
+        {category:'puertas', item:'Ventana con Diseño Moderno', price:450, img:'assets/ventana12.webp' },
+
+
+        // COBERTURAS (10)
+        { category:'coberturas', item:'Cobertura Para Techo Metalico', price:5000, img:'assets/CoberturaMetalica1.jpg' },
+        { category:'coberturas', item:'Cobertura y Techo Metalico', price:7000, img:'assets/CoberturaMetalica2.jpg' },
+        { category:'coberturas', item:'Estructura para Techo', price:10000, img:'assets/CoberturaMetalica3.jpg' },
+        { category:'coberturas', item:'Cobertura y Techo Para Casa de Campo', price:7000, img:'assets/CoberturaMetalica4.png' },
+        { category:'coberturas', item:'Cobertura con Soportes y Techo', price:10000, img:'assets/CoberturaMetalica5.png' },
+        { category:'coberturas', item:'Cobertura Blanca Para Techo Parabólico', price:17000, img:'assets/CoberturaMetalica6.png' },
+        { category:'coberturas', item:'Cobertura y Techado', price:10000, img:'assets/CoberturaMetalica7.png' },
+        { category:'coberturas', item:'Cobertura para Techo', price:13000, img:'assets/CoberturaMetalica8.jpg' },
+        { category:'coberturas', item:'Coberturas y Techos Modernos', price:8000, img:'assets/CoberturaMetalica9.png' },
+        { category:'coberturas', item:'Coberturas y Techos Parabólicos', price:25000, img:'assets/CoberturaMetalica10.png' },
+        { category:'coberturas', item:'Cubierta Azul y Techado Rojo', price:10000, img:'assets/CoberturaMetalica11.png' },
+        { category:'coberturas', item:'Techo Metálico para Comerciales', price:10000, img:'assets/CoberturaMetalica12.png' },
+        // PASAMANOS Y BARANDALES (10)
+        { category:'pasamanos', item:'Pasamanos y Barandal Acero Pulido', price:3500, img:'assets/pasamanos1.jpg' },
+        { category:'pasamanos', item:'Pasamanos Externo Gris', price:2000, img:'assets/pasamanos2.jpg' },
+        { category:'pasamanos', item:'Baranda Pasamanos Para Escalera', price:2500, img:'assets/pasamanos3.jpg' },
+        { category:'pasamanos', item:'Baranda Exterior Acero Inoxidable', price:2000, img:'assets/pasamanos4.jpg' },
+        { category:'pasamanos', item:'Pasamanos Tubular para Escaleras Interiores', price:3000, img:'assets/pasamanos5.jpg' },
+        { category:'pasamanos', item:'Baranda y Pasamanos Negro con Diseño', price:3000, img:'assets/pasamanos6.png' },
+        { category:'pasamanos', item:'Pasamanos Moderno Minimalista', price:2000, img:'assets/pasamanos7.png' },
+        { category:'pasamanos', item:'Baranda de Protección para Balcón', price:2000, img:'assets/pasamanos8.png' },
+        { category:'pasamanos', item:'Pasamanos con Acabado Tipo Madera', price:2500, img:'assets/pasamanos9.png' },
+        { category:'pasamanos', item:'Pasamanos con Vidrio', price:2000, img:'assets/pasamanos10.png' },
+        { category:'pasamanos', item:'Pasamanos y Barandal para Balcón', price:2000, img:'assets/pasamanos11.png' },
+        { category:'pasamanos', item:'Baranda y pasamanos Verde', price:2000, img:'assets/pasamanos12.jpg' },
+
+        // FABRICACIÓN Y MONTAJE (10)
+        { category:'fabricacion', item:'Fabricación de estructuras metálicas', price:500, img:'assets/FabricacionGeneral1.png' },
+        { category:'fabricacion', item:'Fabricación de Techos', price:5000, img:'assets/FabricacionGeneral2.png' },
+        {category:'fabricacion', item:'Fabricación de Puertas y Ventanas', price:500, img:'assets/FabricacionGeneral3.png' },
+        {category:'fabricacion', item:'Fabricación de Pasamanos y Barandales', price:2000, img:'assets/FabricacionGeneral4.png' },
+        {category:'fabricacion', item:'Fabricación de coberturas metálicas', price:2000, img:'assets/FabricacionGeneral5.png' },
+        { category:'fabricacion', item:'Fabricación de componentes y piezas metálicas', price:300, img:'assets/FabricacionGeneral6.png' },
+        { category:'montaje', item:'Montaje de estructuras metálicas', price:2000, img:'assets/MontajeGeneral7.png' },
+        { category:'montaje', item:'Montaje de coberturas y techados', price:1500, img:'assets/MontajeGeneral8.png' },
+        { category:'montaje', item:'Montaje de cerramientos y sistemas metálicos', price:2000, img:'assets/MontajeGeneral9.png' },
+        { category:'montaje', item:'Montaje de puertas y ventanas metálicas', price:200, img:'assets/MontajeGeneral10.png' },
+        { category:'montaje', item:'Montaje de pasamanos y barandales', price:200, img:'assets/MontajeGeneral11.png' },
+        { category:'montaje', item:'Montaje de estructuras para techos y cubiertas', price:2800, img:'assets/MontajeGeneral12.png' },
+      ];
+
+      const grid = document.getElementById('catalog-grid');
+      const search = document.getElementById('catalog-search');
+      const filter = document.getElementById('catalog-filter');
+      const productSelect = document.getElementById('quote-product');
+
+
+      // Formatea el precio con comas para miles
+      function formatPrice(n) {
+        return Number(n).toLocaleString('en-US');
+      }
+
+      // Render tarjetas
+      function renderCatalog(list = products) {
+        grid.innerHTML = '';
+        list.forEach(p=>{
+          const card = document.createElement('article');
+          card.className = 'catalog-card';
+          card.dataset.category = p.category;
+          card.dataset.item = p.item;
+          card.dataset.price = p.price;
+          card.style.background = '#fff';
+          card.style.borderRadius = '10px';
+          card.style.overflow = 'hidden';
+          card.style.boxShadow = '0 10px 30px rgba(13,71,161,0.06)';
+          card.innerHTML = `
+            <div class="thumb" style="height:160px;background-image:url('${p.img}');background-size:cover;background-position:center"></div>
+            <div class="meta" style="padding:14px;">
+              <h4 style="margin:0 0 8px;color:#0d47a1;font-size:15px;font-weight:700">${escapeHtml(p.item)}</h4>
+              <p style="margin:0 0 12px;color:#667;font-size:13px;line-height:1.4">${escapeHtml(shortDesc(p.item))}</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+                <small style="color:#0d47a1;font-weight:700">Desde S/. <strong>${formatPrice(p.price)}</strong></small>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button class="btn-details" style="background:transparent;border:1px solid #0d47a1;color:#0d47a1;padding:8px 12px;border-radius:8px;flex:1;font-weight:600;font-size:13px;cursor:pointer;transition:all 0.2s">Detalles</button>
+                <button class="btn-cotizar" data-item="${escapeAttr(p.item)}" data-category="${p.category}" style="background:#1e6fe8;color:#fff;padding:8px 12px;border-radius:8px;border:none;flex:1;font-weight:600;font-size:13px;cursor:pointer;transition:all 0.2s">Cotizar</button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      function escapeAttr(s){ return (s||'').replace(/"/g,'&quot;'); }
+      function shortDesc(name){ return name + ' — descripción breve del servicio.'; }
+
+      function populateProductSelect(list = products) {
+        productSelect.innerHTML = '<option value="">(Selecciona un producto o usa "Cotizar")</option>';
+        list.forEach(p => {
+          const opt = document.createElement('option');
+          opt.value = p.item;
+          opt.textContent = `${p.item} — S/. ${formatPrice(p.price)}`;
+          productSelect.appendChild(opt);
+        });
+      }
+
+      function updateCatalog() {
+        const q = (search.value||'').toLowerCase().trim();
+        const cat = (filter.value||'').trim();
+        const filtered = products.filter(p=>{
+          const okQ = !q || (p.item + ' ' + p.category).toLowerCase().includes(q);
+          const okCat = !cat || p.category === cat;
+          return okQ && okCat;
+        });
+        renderCatalog(filtered);
+        populateProductSelect(filtered);
+      }
+
+      renderCatalog(products);
+      populateProductSelect(products);
+
+      search.addEventListener('input', updateCatalog);
+      filter.addEventListener('change', updateCatalog);
+
+      // Delegación: detalles y cotizar
+      grid.addEventListener('click', e=>{
+        const detailBtn = e.target.closest('.btn-details');
+        const cotBtn = e.target.closest('.btn-cotizar');
+        const card = e.target.closest('.catalog-card');
+        if (detailBtn && card) {
+          const item = card.dataset.item;
+          const price = card.dataset.price;
+          openModal(item, price, card.querySelector('.thumb').style.backgroundImage.replace(/url\(|\)|"|'/g,''));
+        } else if (cotBtn) {
+          const item = cotBtn.dataset.item;
+          const imgUrl = card.querySelector('.thumb').style.backgroundImage.replace(/url\(|\)|"|'/g,'');
+          fillQuoteFromCard(item, cotBtn.dataset.category, imgUrl);
+        }
+      });
+
+      // Modal (reemplaza la creación anterior)
+      const modal = document.createElement('div');
+      modal.className = 'catalog-modal';
+      modal.innerHTML = `
+        <div class="modal-inner" role="dialog" aria-modal="true">
+          <div class="img"><img id="modal-img" alt="Imagen del producto" src=""></div>
+          <div class="body">
+            <h3></h3>
+            <p></p>
+            <div style="margin-top:auto;display:flex;gap:8px">
+              <button class="btn-primary modal-cotizar" style="flex:1">Cotizar</button>
+              <button class="btn-secondary close-modal" style="flex:1">X</button>
+            </div>
+          </div>
+        </div>
+        <button class="close-modal" aria-label="Cerrar">×</button>
+      `;
+      document.body.appendChild(modal);
+
+      function openModal(item, price, imgUrl){
+        const modalImg = modal.querySelector('#modal-img');
+        const titleEl = modal.querySelector('.body h3');
+        const descEl = modal.querySelector('.body p');
+        const modalInner = modal.querySelector('.modal-inner');
+
+        titleEl.textContent = `${item} — Desde S/. ${formatPrice(price)}`;
+        descEl.textContent = 'Información técnica y alcance del servicio: Realizamos un análisis detallado según las necesidades del proyecto. Contáctanos para brindarte especificaciones precisas.';
+
+        // Reset sizes
+        modalInner.style.width = '';
+        modalImg.removeAttribute('src');
+        modalImg.style.display = 'none';
+
+        if (imgUrl) {
+          // colocar la imagen y ajustar cuando cargue
+          modalImg.src = imgUrl;
+          modalImg.style.display = 'block';
+          modalImg.onload = function () {
+            const naturalW = modalImg.naturalWidth || modalImg.width;
+            const naturalH = modalImg.naturalHeight || modalImg.height;
+            const availW = Math.min(window.innerWidth * 0.92, 1200); // limite práctico
+            const availH = Math.min(window.innerHeight * 0.86, 1000);
+
+            // espacio reservado para texto column (min-width 260px)
+            const textColMin = window.innerWidth < 900 ? 0 : 320;
+            const maxImgW = Math.max(availW - textColMin, availW * 0.5);
+
+            // escala según espacio disponible
+            const scale = Math.min(maxImgW / naturalW, availH / naturalH, 1);
+
+            const finalImgW = Math.round(naturalW * scale);
+            // aplicar ancho al modalInner para que se adapte
+            if (window.innerWidth >= 900) {
+              modalInner.style.width = (finalImgW + textColMin) + 'px';
+              modalInner.style.maxWidth = Math.min(window.innerWidth * 0.96, 1200) + 'px';
+            } else {
+              modalInner.style.width = Math.min(window.innerWidth * 0.96, finalImgW) + 'px';
+            }
+
+            // fuerza un repaint por si hace falta
+            setTimeout(()=> modalInner.style.opacity = '1', 20);
+          };
+          modalImg.onerror = function(){ modalImg.style.display='none'; };
+        }
+
+        // almacenar imgUrl para la acción "Cotizar"
+        modal.dataset.imgUrl = imgUrl || '';
+        modal.classList.add('open');
+
+        // focus accesible
+        const firstBtn = modal.querySelector('.modal-cotizar');
+        if (firstBtn) firstBtn.focus();
+      }
+
+      // cerrar modal manejadores (sin cambios)
+      document.body.addEventListener('click', e=>{
+        if (e.target.classList.contains('close-modal') || e.target === modal) modal.classList.remove('open');
+      });
+
+      modal.addEventListener('click', e=>{
+        if (e.target.classList.contains('modal-cotizar')) {
+          const title = modal.querySelector('.body h3').textContent || '';
+          const imgUrl = modal.dataset.imgUrl || '';
+          fillQuoteFromCard(title, '', imgUrl);
+          modal.classList.remove('open');
+        }
+      });
+
+      window.addEventListener('resize', ()=> {
+        // cerrar o recalcular si el modal está abierto para evitar overflow raro
+        if (modal.classList.contains('open')) {
+          const modalImg = modal.querySelector('#modal-img');
+          if (modalImg && modalImg.src) {
+            // reusamos openModal para recalcular anchura (simular recarga)
+            openModal(modal.querySelector('.body h3').textContent.split(' — ')[0] || '', 
+                      modal.querySelector('.body h3').textContent.split(' — ')[1] || '', 
+                      modalImg.src);
+          }
+        }
+      });
+
+      function fillQuoteFromCard(item, category, imgUrl){
+        const textarea = document.querySelector('textarea[name="descripcion"]');
+        const ubic = document.getElementById('ubicacion-input');
+        
+        const opt = Array.from(productSelect.options).find(o => o.value === item);
+        if (opt) productSelect.value = opt.value;
+        else {
+          const tmp = document.createElement('option');
+          tmp.value = item;
+          tmp.text = item;
+          productSelect.appendChild(tmp);
+          productSelect.value = tmp.value;
+        }
+        
+        if (textarea) {
+          textarea.value = `Cotización solicitada para: ${item}\nDetalles: `;
+          textarea.focus();
+          textarea.scrollIntoView({ behavior:'smooth', block:'center' });
+        }
+        if (ubic && !ubic.value) ubic.value = 'Chota, Cajamarca';
+        
+        // Guardar URL de imagen y nombre del producto en el formulario
+        form.dataset.productImage = imgUrl || '';
+        form.dataset.productName = item || '';
+      }
+
+      // Form: envío (ACTUALIZADO)
+      const form = document.getElementById('quote-form');
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        const fd = new FormData(form);
+        if (!fd.get('empresa') || !fd.get('telefono') || !fd.get('email') || !fd.get('descripcion')) {
+          alert('Por favor completa todos los campos requeridos.');
+          return;
+        }
+        
+        const productImage = form.dataset.productImage || '';
+        const productName = form.dataset.productName || '';
+        const empresa = fd.get('empresa');
+        const telefono = fd.get('telefono');
+        const email = fd.get('email');
+        const producto = fd.get('producto') || '(no especificado)';
+        const ubicacion = fd.get('ubicacion');
+        const descripcion = fd.get('descripcion');
+        
+        // Mensaje principal con todos los detalles
+        const mensaje = `*SOLICITUD DE COTIZACIÓN*\n\n👤 *Empresa/Nombre:* ${empresa}\n📦 *Producto:* ${producto}\n📞 *Teléfono:* ${telefono}\n📧 *Email:* ${email}\n📍 *Ubicación:* ${ubicacion}\n\n📝 *Descripción del Proyecto:*\n${descripcion}\n\n---\n_Mensaje enviado desde estructurasmetalicaschota.com_`;
+        
+        // Abrir WhatsApp con el mensaje
+        window.open('https://wa.me/51901165242?text=' + encodeURIComponent(mensaje), '_blank');
+        
+        // Si existe imagen del producto, enviarla en un segundo mensaje
+        if (productImage) {
+          setTimeout(() => {
+            const msgImg = `📸 *Foto del producto:*\n${productName}\n\n${productImage}`;
+            window.open('https://wa.me/51901165242?text=' + encodeURIComponent(msgImg), '_blank');
+          }, 2000);
+        }
+        
+        form.reset();
+        delete form.dataset.productImage;
+        delete form.dataset.productName;
+      });
+
+      document.getElementById('cotizar-wsp').addEventListener('click', ()=>{
+        const fd = new FormData(form);
+        const empresa = fd.get('empresa') || 'Cliente';
+        const producto = fd.get('producto') || 'Cotización general';
+        const telefono = fd.get('telefono') || 'no especificado';
+        const ubicacion = fd.get('ubicacion') || 'no especificada';
+        const productImage = form.dataset.productImage || '';
+        const productName = form.dataset.productName || '';
+        
+        const mensaje = `*SOLICITUD RÁPIDA DE COTIZACIÓN*\n\n👤 *Empresa/Nombre:* ${empresa}\n📦 *Producto:* ${producto}\n📞 *Teléfono:* ${telefono}\n📍 *Ubicación:* ${ubicacion}\n\n💬 *Necesito más información y detalles de este servicio.*\n\n_Mensaje enviado desde estructurasmetalicaschota.com_`;
+        
+        window.open('https://wa.me/51901165242?text=' + encodeURIComponent(mensaje), '_blank');
+        
+        // Si existe imagen, enviarla después
+        if (productImage) {
+          setTimeout(() => {
+            const msgImg = `📸 *Foto del producto consultado:*\n${productName}\n\n${productImage}`;
+            window.open('https://wa.me/51901165242?text=' + encodeURIComponent(msgImg), '_blank');
+          }, 2000);
+        }
+      });
+
+    })();
+  </script>
+
+  <!-- WhatsApp flotante -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- WhatsApp Modal -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242';
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        showModal();
+      });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) hideModal();
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+
+        if (!nombre || !telefono) {
+          alert('Por favor ingresa tu nombre y teléfono.');
+          return;
+        }
+
+        let text = `Hola, soy ${nombre}.\nMi teléfono es ${telefono}.`;
+        text += mensaje ? `\nMensaje: ${mensaje}` : '\n(sin mensaje).';
+        text += '\n— Enviado desde estructurasmetalicaschota.com';
+
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+
+        window.open(url, '_blank');
+        hideModal();
+        form.reset();
+      });
+    })();
+  </script>
+
+  <!-- Page animations -->
+  <script>
+    (function(){
+      document.documentElement.classList.add('page-enter');
+      document.addEventListener('DOMContentLoaded', () => {
+        const hero = document.querySelector('.hero-page');
+        if (hero) hero.classList.add('animate-hero');
+        const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+        mainContainers.forEach(el => el.classList.add('page-enter'));
+        setTimeout(()=> {
+          document.documentElement.classList.remove('page-enter');
+          mainContainers.forEach(el=> el.classList.remove('page-enter'));
+        }, 1000);
+      });
+    })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre Nosotros — Estructuras Metálicas Chota</title>
+  <meta name="description" content="Empresa dedicada a la creación y diseño de estructuras y piezas metálicas." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('header.html')
+      .then(res => { if (!res.ok) throw new Error('No header'); return res.text(); })
+      .then(html => document.getElementById('site-header').innerHTML = html)
+      .catch(()=>{/* fallback si se abre por file:// */});
+  </script>
+
+  <!-- HERO -->
+  <header class="hero-page sobre" style="background-image: url('assets/FondoParaTodos.png');">
+    <div class="content">
+      <h3>Conoce mas</h3>
+      <h1>Sobre Nosotros</h1>
+    </div>
+  </header>
+
+  <!-- SECCIÓN: misión / visión con imágenes laterales -->
+  <section class="about-hero" aria-labelledby="about-title">
+    <div class="about-inner">
+      <div class="about-columns">
+        <div class="about-card about-mision">
+          <h3>Nuestra Misión</h3>
+          <p>Diseñar y fabricar estructuras metálicas emparradas rápidas y seguras que diferencien a las industrias y sostengan su crecimiento.</p>
+        </div>
+
+        <div class="about-divider" aria-hidden="true"></div>
+
+        <div class="about-card about-vision">
+          <h3>Nuestra Visión</h3>
+          <p>Para el año 2030 ser la empresa más reconocida en construcciones industriales EPC, entregando calidad, seguridad y cumplimiento.</p>
+        </div>
+      </div>
+
+      <!-- imágenes laterales (decorativas) -->
+      <img src="assets/person-left.png" alt="" class="about-figure left" aria-hidden="true" />
+      <img src="assets/person-right.png" alt="" class="about-figure right" aria-hidden="true" />
+    </div>
+  </section>
+
+  <!-- VALORES: debajo -->
+  <section class="section-valores">
+    <div class="container">
+      <div class="valores-header">
+        <h2>Nuestros <span class="accent">Valores</span></h2>
+        <p>Compromiso, disciplina y trabajo en equipo, pilares de nuestro trabajo diario.</p>
+      </div>
+
+      <div class="valores-grid">
+        <article class="valor">
+          <img src="assets/icon-compromiso.png" alt="" />
+          <h4>Compromiso</h4>
+          <p>Entregar calidad y seguridad en cada proyecto, siempre con foco en el cliente.</p>
+        </article>
+
+        <article class="valor">
+          <img src="assets/icon-disciplina.png" alt="" />
+          <h4>Disciplina</h4>
+          <p>Procesos y seguimiento que garantizan resultados consistentes.</p>
+        </article>
+
+        <article class="valor">
+          <img src="assets/icon-equipo.png" alt="" />
+          <h4>Trabajo en Equipo</h4>
+          <p>Colaboración y comunicación para alcanzar objetivos comunes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+
+    <!-- WhatsApp flotante (opcional) -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- Modal / formulario WhatsApp (widget tipo chat) -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche  — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script: abrir modal y enviar a WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242'; // +51 901 165 242
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){ e.preventDefault(); showModal(); });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){ if (e.target === modal) hideModal(); });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+        if (!nombre || !telefono) { alert('Por favor ingresa tu nombre y teléfono.'); return; }
+        let text = `Hola, soy ${nombre}.`;
+        text += ` Mi teléfono es ${telefono}.`;
+        text += mensaje ? ` Mensaje: ${mensaje}.` : ' (sin mensaje).';
+        text += ' — Enviado desde la web de Estructuras Metálicas Chota';
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+        window.open(url, '_blank');
+        hideModal(); form.reset();
+      });
+    })();
+  </script>
+
+  <!-- Script: animar hero y entrada de página -->
+  <script>
+    (function(){
+      document.documentElement.classList.add('page-enter');
+      document.addEventListener('DOMContentLoaded', () => {
+        const hero = document.querySelector('.hero-page');
+        if (hero) hero.classList.add('animate-hero');
+        const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+        mainContainers.forEach(el => el.classList.add('page-enter'));
+        setTimeout(()=> {
+          document.documentElement.classList.remove('page-enter');
+          mainContainers.forEach(el=> el.classList.remove('page-enter'));
+        }, 1000);
+      });
+    })();
+  </script>
+
+  <script src="site.js"></script>
+</body>
+</html>

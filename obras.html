@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Obras — Estructuras Metálicas Chota</title>
+  <meta name="description" content="Portafolio de obras — Estructuras Metálicas Chota" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .obras-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+    @media (max-width:1200px) { .obras-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width:700px)  { .obras-grid { grid-template-columns: repeat(1,1fr); } }
+
+    .obra-foto-card { min-height: 240px; }
+
+    /* Contenedor de sección con su grid + detalles */
+    .obras-section {
+      margin-bottom: 60px;
+    }
+
+    .obras-section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Detalles dentro de cada sección (justo debajo del grid) */
+    .obras-section-detalles {
+      margin-top: 30px;
+      border-top: 1px solid #eee;
+      padding-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('header.html')
+      .then(res => { if (!res.ok) throw new Error('No header'); return res.text(); })
+      .then(html => document.getElementById('site-header').innerHTML = html)
+      .catch(()=>{/* fallback si se abre por file:// */});
+  </script>
+
+  <!-- HERO -->
+  <header class="hero-page sobre" style="background-image: url('assets/FondoParaTodos.png');">
+    <div class="content">
+      <h1>CONOCE TODAS<br/><strong>NUESTRAS OBRAS</strong></h1>
+    </div>
+  </header>
+
+  <!-- Presentación breve -->
+  <section class="section-servicios full-bleed">
+    <div class="container">
+      <div class="container-inner">
+        <h2 class="section-title">Nuestras Obras <span class="accent">Portafolio</span></h2>
+        <p class="servicios-subtitle">Conoce algunos de los proyectos que hemos realizado con clientes satisfechos.</p>
+
+        <!-- SECCIÓN 1: OBRAS 1-10 -->
+        <div class="obras-section">
+          <div class="obras-section-title">Puertas y ventanas</div>
+          <div class="obras-grid">
+            <!-- Obra 1 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra1Puerta.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta Principal Moderna</h3>
+                <a class="servicio-link" href="#detalle-obra-1" data-target="detalle-obra-1">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 2 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra2Puerta.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta Metalica Principal</h3>
+                <a class="servicio-link" href="#detalle-obra-2" data-target="detalle-obra-2">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 3 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra3Puerta.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Cerramiento Metálico Frontal</h3>
+                <a class="servicio-link" href="#detalle-obra-3" data-target="detalle-obra-3">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 4 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra4Puerta.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta Principal y Ventana con Reja</h3>
+                <a class="servicio-link" href="#detalle-obra-4" data-target="detalle-obra-4">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 5 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra5.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón de Acceso Doble Hoja</h3>
+                <a class="servicio-link" href="#detalle-obra-5" data-target="detalle-obra-5">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 6 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra6.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta de Entrada</h3>
+                <a class="servicio-link" href="#detalle-obra-6" data-target="detalle-obra-6">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 7 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra7.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón y Puerta de Garaje y Acceso</h3>
+                <a class="servicio-link" href="#detalle-obra-7" data-target="detalle-obra-7">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 8 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra8.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta de Seguridad con Acabado de Madera</h3>
+                <a class="servicio-link" href="#detalle-obra-8" data-target="detalle-obra-8">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 9 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra9.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Ventanas de Arco para Edificio Religioso</h3>
+                <a class="servicio-link" href="#detalle-obra-9" data-target="detalle-obra-9">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 10 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra10.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta de Diseño Exclusivo y Lujoso</h3>
+                <a class="servicio-link" href="#detalle-obra-10" data-target="detalle-obra-10">Ver obra</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Detalles de Obras 1-10 -->
+          <div class="obras-section-detalles">
+            <!-- detalle-obra-1 -->
+            <article id="detalle-obra-1" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra1Puerta.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Obra — Puerta Metálica Principal Moderna</h2>
+                  <p>Trabajo de fabricación e instalación de puerta principal para casa moderna, incluyendo diseño a medida y acabados de alta calidad.</p>
+                  <p>Descripción breve: Ejecución de puerta de seguridad con diseño minimalista en color claro, líneas horizontales y un panel vertical de vidrio esmerilado, complementada con un marco superior de ventanas fijas y un tirador de acero inoxidable.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-2 -->
+            <article id="detalle-obra-2" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra2Puerta.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta Metalica Principal</h2>
+                  <p>Trabajo de fabricación e instalación de puerta de entrada en color oscuro, ideal para contrastar con fachadas claras en construcciones contemporáneas.</p>
+                  <p>Descripción breve: Ejecución de puerta de seguridad pivotante o abatible en negro mate, con diseño de líneas horizontales incrustadas en acero inoxidable. Equipada con un manillón tubular largo en acero pulido.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-3 -->
+            <article id="detalle-obra-3" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra3Puerta.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Cerramiento Metálico Frontal</h2>
+                  <p>Trabajo de fabricación e instalación de cerramientos metálicos modulares, compuestos por puertas de estructura robusta para fachada.</p>
+                  <p>Descripción breve: Ejecución de juego de puertas con ventanales frontales con un diseño de cuadrícula. Las puertas son de triple hoja batiente y están combinadas con paneles inferiores ciegos y vidrio superior, todo con un acabado en pintura de color marrón (similar a la madera).</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-4 -->
+            <article id="detalle-obra-4" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra4Puerta.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta Principal y Ventana con Reja</h2>
+                  <p>Trabajo de fabricación e instalación de puerta de entrada y ventana adyacente, ideales para viviendas modernas que buscan seguridad y un diseño actual.</p>
+                  <p>Descripción breve: Ejecución de puerta principal con acabado tipo madera en tono rojizo, detalles horizontales de acero inoxidable y un tirador vertical pulido. Acompañada de una ventana fija con un diseño de reja artística en color negro, que ofrece seguridad y estética.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-5 -->
+            <article id="detalle-obra-5" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra5.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón de Acceso Doble Hoja</h2>
+                  <p>Trabajo de fabricación e instalación de portón metálico de doble hoja, ideal para accesos amplios en casas de campo, garajes o entradas principales.</p>
+                  <p>Descripción breve: Ejecución de portón robusto con acabado en color marrón rojizo (tipo madera). Cuenta con un diseño de paneles horizontales y detalles verticales en tono dorado o acero pulido. Incluye mirillas rectangulares con vidrio oscuro para privacidad y seguridad.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-6 -->
+            <article id="detalle-obra-6" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra6.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Entrada</h2>
+                  <p>Trabajo de fabricación e instalación de puerta, con diseño moderno de paneles y ventilación superior.</p>
+                  <p>Descripción breve: Ejecución de puerta metálica de una sola hoja en color gris claro, con un diseño de cinco paneles horizontales lisos. Incluye un marco superior fijo (lucernario) con rejilla decorativa que permite la entrada de luz y ventilación.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-7 -->
+            <article id="detalle-obra-7" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra7.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón y Puerta de Garaje y Acceso</h2>
+                  <p>Trabajo de fabricación e instalación de portón vehicular de doble hoja y puerta peatonal, con un diseño unificado para el cerramiento frontal de una vivienda.</p>
+                  <p>Descripción breve: Ejecución de portón y puerta metálicos en color gris, con un diseño moderno de paneles horizontales que incluyen ranuras de ventilación o mirillas. Ambos están complementados con ventanas superiores fijas con una rejilla geométrica para iluminación y seguridad.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-8 -->
+            <article id="detalle-obra-8" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra8.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Seguridad con Acabado de Madera</h2>
+                  <p>Trabajo de fabricación e instalación de puerta de entrada principal, destacada por su acabado que imita la textura de la madera.</p>
+                  <p>Descripción breve: Ejecución de puerta metálica de alta seguridad con marco exterior en color marrón oscuro. La hoja principal tiene un acabado de imitación madera en tono rojizo con textura veteada y líneas horizontales. Incluye dos manillones tubulares de acero inoxidable y cerradura de seguridad.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-9 -->
+            <article id="detalle-obra-9" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra9.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Ventanas de Arco para Edificio Religioso</h2>
+                  <p>Trabajo de fabricación e instalación de ventanas fijas para un muro lateral de gran altura.</p>
+                  <p>Descripción breve: Ejecución de ventanales metálicos con diseño de arco superior (medio punto). El diseño interior del marco de herrería está estructurado con líneas que forman rectángulos y un destacado patrón de cruz en la ventana principal. Acabado en pintura de color blanco o gris claro.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-10 -->
+            <article id="detalle-obra-10" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra10.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Diseño Exclusivo y Lujoso</h2>
+                  <p>Trabajo de fabricación e instalación de una puerta de entrada principal de alto impacto visual y diseño muy moderno.</p>
+                  <p>Descripción breve: Ejecución de puerta de seguridad en color negro profundo, con un diseño sofisticado que combina la chapa lisa con detalles de acero pulido. Incluye un panel vertical de vidrio que está protegido por tubos de acero inoxidable. La manija tiene un diseño geométrico único.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 2: OBRAS 11-20 -->
+        <div class="obras-section">
+          <div class="obras-section-title">Barandales, techos y ventanas</div>
+          <div class="obras-grid">
+            <!-- Obra 11 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra11.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Ventana Fija con Reja de Diseño Artístico</h3>
+                <a class="servicio-link" href="#detalle-obra-11" data-target="detalle-obra-11">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 12 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra12.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Pasamanos y Barandales Metálicos para Escaleras</h3>
+                <a class="servicio-link" href="#detalle-obra-12" data-target="detalle-obra-12">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 13 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra13.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Estructura Metálica para Techo</h3>
+                <a class="servicio-link" href="#detalle-obra-13" data-target="detalle-obra-13">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 14 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra14.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Pasamanos y Baranda de Acero Inoxidable</h3>
+                <a class="servicio-link" href="#detalle-obra-14" data-target="detalle-obra-14">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 15 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra15.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">MODIFICACIÓN DE ESCALERAS (Metálicas)</h3>
+                <a class="servicio-link" href="#detalle-obra-15" data-target="detalle-obra-15">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 16 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra16.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Escalera Exterior Metálica con Descanso</h3>
+                <a class="servicio-link" href="#detalle-obra-16" data-target="detalle-obra-16">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 17 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra17.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Pasamanos y Barandales Interiores Negros</h3>
+                <a class="servicio-link" href="#detalle-obra-17" data-target="detalle-obra-17">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 18 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra18.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Baranda de Escalera con Diseño Oblicuo</h3>
+                <a class="servicio-link" href="#detalle-obra-18" data-target="detalle-obra-18">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 19 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra19.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Baranda Exterior de Acero Inoxidable Pulido</h3>
+                <a class="servicio-link" href="#detalle-obra-19" data-target="detalle-obra-19">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 20 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra20.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón de Acceso Principal con Marco Decorativo</h3>
+                <a class="servicio-link" href="#detalle-obra-20" data-target="detalle-obra-20">Ver obra</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Detalles de Obras 11-20 -->
+          <div class="obras-section-detalles">
+            <!-- detalle-obra-11 -->
+            <article id="detalle-obra-11" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra11.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Ventana Fija con Reja de Diseño Artístico</h2>
+                  <p>Trabajo de fabricación e instalación de ventana de seguridad para fachada, con un diseño de reja moderna y llamativa.</p>
+                  <p>Descripción breve: Ejecución de ventana fija con marco de aluminio o metal oscuro, complementada con una reja exterior con diseño geométrico y abstracto, utilizando barras horizontales y verticales en diferentes niveles para crear un efecto tridimensional. Incluye vidrios polarizados o reflectivos.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-12 -->
+            <article id="detalle-obra-12" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra12.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Pasamanos y Barandales Metálicos para Escaleras</h2>
+                  <p>Trabajo de fabricación e instalación de pasamanos y barandales de seguridad para tramos de escaleras interiores.</p>
+                  <p>Descripción breve: Ejecución de estructura metálica de pasamanos y barandal en color verde olivo. El diseño incluye un pasamanos superior continuo y barras horizontales paralelas que sirven como protección. Se adapta a la forma de la escalera, incluyendo giros y descansos.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-13 -->
+            <article id="detalle-obra-13" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra13.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Estructura Metálica para Techo</h2>
+                  <p>Trabajo de montaje y soldadura de la estructura principal para la cubierta de una nave industrial, almacén o gran pabellón.</p>
+                  <p>Descripción breve: Ejecución completa del esqueleto metálico del techo, incluyendo columnas y tijerales (cerchas) de celosía que forman un techo a dos aguas. La estructura está pintada con imprimación o pintura protectora de color rojo.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-14 -->
+            <article id="detalle-obra-14" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra14.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Pasamanos y Baranda de Acero Inoxidable</h2>
+                  <p>Trabajo de fabricación e instalación de pasamanos y barandales de alta calidad para escaleras interiores de viviendas o edificios.</p>
+                  <p>Descripción breve: Ejecución de baranda completa de acero inoxidable, con un diseño moderno de tubos horizontales y verticales. El pasamanos es un tubo pulido y curvo, instalado para ofrecer un acabado limpio, brillante y resistente a la corrosión.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-15 -->
+            <article id="detalle-obra-15" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra15.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>MODIFICACIÓN DE ESCALERAS (Metálicas)</h2>
+                  <p>Trabajo de fabricación e instalación de una estructura de escalera metálica, ideal para obra gruesa o como base para futuros acabados.</p>
+                  <p>Descripción breve: Ejecución de escalera recta con estructura robusta de perfiles metálicos que forman los peldaños (huellas) y la zanca (estructura lateral de soporte). Diseñada para resistir alto tráfico y futuras cubiertas de concreto o madera.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-16 -->
+            <article id="detalle-obra-16" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra16.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Escalera Exterior Metálica con Descanso</h2>
+                  <p>Trabajo de fabricación e instalación de una escalera de acceso auxiliar o de emergencia para exteriores.</p>
+                  <p>Descripción breve: Ejecución de escalera de tramos rectos con un descanso intermedio. La estructura incluye peldaños antideslizantes de chapa diamantada (o estriada) y barandas de seguridad con tubos horizontales, todo con un acabado de pintura protectora de color gris claro.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-17 -->
+            <article id="detalle-obra-17" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra17.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Seguridad con Diseño Moderno</h2>
+                  <p>Trabajo de fabricación e instalación de pasamanos y barandas para escaleras y descansos interiores en una vivienda moderna.</p>
+                  <p>Descripción breve: Ejecución de barandas metálicas en un elegante color negro mate. El diseño es de líneas horizontales y sencillas, con un pasamanos superior continuo que ofrece seguridad y un alto contraste visual con las paredes claras del interior.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-18 -->
+            <article id="detalle-obra-18" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra18.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Baranda de Escalera con Diseño Oblicuo</h2>
+                  <p>Trabajo de fabricación e instalación de barandas y pasamanos metálicos para escaleras interiores, con un enfoque en la estética y la seguridad.</p>
+                  <p>Descripción breve: Ejecución de barandas en color negro mate que complementan una escalera con acabados en blanco y negro. El diseño se caracteriza por el uso de tubos internos colocados en diagonal, paralelos a la inclinación de la escalera, creando un patrón dinámico y moderno.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-19 -->
+            <article id="detalle-obra-19" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra19.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Baranda Exterior de Acero Inoxidable Pulido</h2>
+                  <p>Trabajo de fabricación e instalación de barandas de alta calidad para terrazas, balcones o perímetros de construcción.</p>
+                  <p>Descripción breve: Ejecución de baranda de protección con postes verticales y pasamanos de acero inoxidable tubular. El diseño utiliza líneas horizontales paralelas, fijadas al pasamanos mediante soportes (codos) pulidos, creando un acabado muy brillante y espejo.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-20 -->
+            <article id="detalle-obra-20" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra20.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón de Acceso Vehicular con Diseño Moderno</h2>
+                  <p>Trabajo de fabricación e instalación de un portón de doble hoja para entrada principal, enmarcado con paneles y ventanas fijas.</p>
+                  <p>Descripción breve: Ejecución de portón metálico de doble hoja en color gris, con un diseño central moderno que incluye ventanas de forma curva con cuadrícula interior y vidrio oscuro. El conjunto se completa con paneles laterales y un marco superior con rejillas que permiten el paso de luz.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 3: OBRAS 21-30 -->
+        <div class="obras-section">
+          <div class="obras-section-title">Puertas</div>
+          <div class="obras-grid">
+            <!-- Obra 21 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra21.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Fabricación y Acabado de Portón Metálico</h3>
+                <a class="servicio-link" href="#detalle-obra-21" data-target="detalle-obra-21">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 22 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra22.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Fachada Unificada con Portón Vehicular y Puerta Peatonal</h3>
+                <a class="servicio-link" href="#detalle-obra-22" data-target="detalle-obra-22">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 23 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra23.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Acceso Principal con Vidrios de Alto Contraste</h3>
+                <a class="servicio-link" href="#detalle-obra-23" data-target="detalle-obra-23">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 24 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra24.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Conjunto de Acceso Principal y Puerta de Servicio</h3>
+                <a class="servicio-link" href="#detalle-obra-24" data-target="detalle-obra-24">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 25 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra25.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Instalación de Cubierta Metálica</h3>
+                <a class="servicio-link" href="#detalle-obra-25" data-target="detalle-obra-25">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 26 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra26.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Cerramiento Metálico con Portón</h3>
+                <a class="servicio-link" href="#detalle-obra-26" data-target="detalle-obra-26">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 27 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra27.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta de Acceso con Detalles Cromados</h3>
+                <a class="servicio-link" href="#detalle-obra-27" data-target="detalle-obra-27">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 28 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra28.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta Metálica de Acceso Lateral</h3>
+                <a class="servicio-link" href="#detalle-obra-28" data-target="detalle-obra-28">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 29 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra29.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta con Diseño Curvo</h3>
+                <a class="servicio-link" href="#detalle-obra-29" data-target="detalle-obra-29">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 30 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra30.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Barandas de Acceso Exterior</h3>
+                <a class="servicio-link" href="#detalle-obra-30" data-target="detalle-obra-30">Ver obra</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="obras-section-detalles">
+            <!-- detalle-obra-21 -->
+            <article id="detalle-obra-21" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra21.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Fabricación y Acabado de Portón Metálico</h2>
+                  <p>Trabajo de fabricación y aplicación de pintura de acabado a un portón metálico seccional o de doble hoja.</p>
+                  <p>Descripción breve: Proceso de pintura a pistola sobre un portón metálico de diseño horizontal, que incluye una abertura central para ventana o ventilación. Se está aplicando una capa de pintura en color verde olivo o caqui, garantizando un acabado uniforme y protector contra la corrosión.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-22 -->
+            <article id="detalle-obra-22" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra22.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Fachada Unificada con Portón Vehicular y Puerta Peatonal</h2>
+                  <p>Trabajo de fabricación e instalación de un gran portón de cochera (vehicular) y una puerta peatonal de acceso, con diseño coordinado.</p>
+                  <p>Descripción breve: Ejecución de un cerramiento frontal amplio en color marrón rojizo, con un diseño moderno de paneles horizontales y tiras decorativas de acero inoxidable. Incluye un portón de múltiples hojas y una puerta peatonal independiente, ambas con paneles de vidrio superior para iluminación.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-23 -->
+            <article id="detalle-obra-23" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra23.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Acceso Principal con Vidrios de Alto Contraste</h2>
+                  <p>Trabajo de fabricación e instalación de puerta principal de doble hoja y ventanas, con un uso distintivo de vidrio polarizado de color azul.</p>
+                  <p>Descripción breve: Ejecución de puerta principal metálica de doble hoja en color gris oscuro, con diseño geométrico y manillones verticales. El acceso está enmarcado por paneles laterales y superiores fijos, y la fachada se complementa con ventanas en tira superior y lateral, todas con vidrio azul brillante que crea un alto impacto visual.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-24 -->
+            <article id="detalle-obra-24" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra24.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Conjunto de Acceso Principal y Puerta de Servicio</h2>
+                  <p>Trabajo de fabricación e instalación de una puerta principal amplia y una puerta auxiliar o de servicio, ambas en el mismo color y estilo.</p>
+                  <p>Descripción breve: Ejecución de dos puertas metálicas en color marrón rojizo brillante. La entrada principal es un portón de doble hoja con paneles de vidrio y un marco superior de ventana. La puerta de servicio es de una sola hoja con líneas horizontales de decoración. Ambas cuentan con manillones de acero pulido.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-25 -->
+            <article id="detalle-obra-25" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra25.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Instalación de Cubierta Metálica (Techo Rojo)</h2>
+                  <p>Trabajo de suministro, montaje e instalación de techo de planchas metálicas sobre una estructura preexistente.</p>
+                  <p>Descripción breve: Ejecución de una cubierta de techo a varias aguas (poligonal), utilizando planchas metálicas trapezoidales con un acabado de pintura de alto brillo en color rojo. Incluye la correcta superposición y fijación de las planchas para garantizar la estanqueidad.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-26 -->
+            <article id="detalle-obra-26" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra26.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Cerramiento Metálico con Portón Industrial</h2>
+                  <p>Trabajo de fabricación e instalación de un gran portón de acceso vehicular y una puerta peatonal, con diseño robusto y funcional.</p>
+                  <p>Descripción breve: Ejecución de un cerramiento frontal que incluye un portón de cochera de cuatro hojas con diseño de paneles horizontales y ventilación de rejilla. Junto a él, se instaló una puerta de acceso peatonal más pequeña con el mismo color gris, creando una estética unificada en la fachada.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-27 -->
+            <article id="detalle-obra-27" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra27.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Acceso con Detalles Cromados</h2>
+                  <p>Trabajo de fabricación e instalación de puerta de entrada o servicio, con diseño de paneles y detalles metálicos modernos.</p>
+                  <p>Descripción breve: Ejecución de puerta metálica de una sola hoja en color gris medio. El diseño presenta tres líneas horizontales de acero pulido y una línea vertical en el costado que atraviesa la hoja, dando un aspecto minimalista y elegante. Incluye un manillón vertical de acero inoxidable.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-28 -->
+            <article id="detalle-obra-28" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra28.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta Metálica de Acceso Lateral</h2>
+                  <p>Trabajo de fabricación e instalación de una puerta de servicio o acceso lateral para una vivienda en construcción.</p>
+                  <p>Descripción breve: Ejecución de puerta metálica de una sola hoja en color verde olivo. La puerta presenta un diseño de paneles horizontales en la mayor parte de la hoja, complementado con una columna vertical de recuadros que están abiertos para instalar vidrio o ventilación. Incluye una rejilla decorativa superior fija.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-29 -->
+            <article id="detalle-obra-29" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra29.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta de Seguridad con Diseño Curvo</h2>
+                  <p>Trabajo de fabricación e instalación de puerta de entrada principal con diseño moderno y único.</p>
+                  <p>Descripción breve: Ejecución de puerta metálica de una sola hoja en color gris grafito, con un diseño que combina líneas horizontales y un panel vertical con bordes curvos. Este panel curvo está dividido en recuadros para vidrio o ventilación, e incluye una moldura de color gris claro para destacar el diseño.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-30 -->
+            <article id="detalle-obra-30" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra30.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Barandas y Escalera de Acceso Exterior</h2>
+                  <p>Trabajo de fabricación e instalación de barandas metálicas de seguridad para una escalera de acceso a una segunda planta o área elevada.</p>
+                  <p>Descripción breve: Ejecución de barandas metálicas en color gris claro, diseñadas para una escalera de concreto exterior. El diseño es de líneas horizontales simples y modernas, con pasamanos en tubo. El conjunto ofrece seguridad y durabilidad para el uso a la intemperie.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 4: OBRAS 31-40 -->
+        <div class="obras-section">
+          <div class="obras-section-title">Puertas, barandales y techos</div>
+          <div class="obras-grid">
+            <!-- Obra 31 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra31.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Baranda de Lujo para Escalera Exterior</h3>
+                <a class="servicio-link" href="#detalle-obra-31" data-target="detalle-obra-31">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 32 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra32.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Estructura Metálica para Techo Urbano</h3>
+                <a class="servicio-link" href="#detalle-obra-32" data-target="detalle-obra-32">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 33 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra33.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón Plegable de Acceso Vehicular</h3>
+                <a class="servicio-link" href="#detalle-obra-33" data-target="detalle-obra-33">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 34 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra34.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón Principal de Diseño Curvo y Vidrio Azul</h3>
+                <a class="servicio-link" href="#detalle-obra-34" data-target="detalle-obra-34">Ver obra</a>
+              </div>  
+            </article>
+
+            <!-- Obra 35 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra35.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón de Garaje Moderno y Elegante</h3>
+                <a class="servicio-link" href="#detalle-obra-35" data-target="detalle-obra-35">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 36 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra36.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Barandas Interiores Metálicas Sencillas</h3>
+                <a class="servicio-link" href="#detalle-obra-36" data-target="detalle-obra-36">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 37 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra37.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Estructura Metálica para Techo (En Construcción)</h3>
+                <a class="servicio-link" href="#detalle-obra-37" data-target="detalle-obra-37">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 38 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra38.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Puerta y Ventanas con Rejas de Seguridad</h3>
+                <a class="servicio-link" href="#detalle-obra-38" data-target="detalle-obra-38">Ver obra</a>
+              </div>
+            </article>
+
+            <!-- Obra 39 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra39.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón y Puerta con Diamantes Decorativos</h3>
+                <a class="servicio-link" href="#detalle-obra-39" data-target="detalle-obra-39">Ver obra</a>
+              </div>  
+            </article>
+
+            <!-- Obra 40 -->
+            <article class="servicio-foto-card obra-foto-card" style="background-image:url('assets/Obra40.jpg')">
+              <div class="servicio-overlay"></div>
+              <div class="servicio-content">
+                <h3 class="servicio-title">Portón de Seguridad con Diseño de Ventanas Verticales</h3>
+                <a class="servicio-link" href="#detalle-obra-40" data-target="detalle-obra-40">Ver obra</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="obras-section-detalles">
+            <!-- detalle-obra-31 -->
+            <article id="detalle-obra-31" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra31.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Baranda de Lujo para Escalera Exterior</h2>
+                  <p>Trabajo de fabricación e instalación de barandas de alta calidad para una escalera de acceso exterior o terraza.</p>
+                  <p>Descripción breve: Ejecución de barandas de acero inoxidable pulido, diseñadas para una escalera con acabados de cerámica gris. El diseño se compone de postes robustos y un pasamanos tubular, con líneas de cables o tubos delgados que corren en diagonal a lo largo de la escalera, ofreciendo un aspecto moderno y limpio.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-32 -->
+            <article id="detalle-obra-32" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra32.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Estructura Metálica para Techo Urbano</h2>
+                  <p>Trabajo de montaje y soldadura de la estructura de soporte para la cubierta de un techo en una zona residencial o urbana.</p>
+                  <p>Descripción breve: Ejecución de la estructura metálica (tijerales y vigas) sobre una azotea existente. El diseño es modular y a varias aguas, utilizando perfiles de acero pintados con imprimación o acabado de color gris claro, listos para recibir las planchas de cubierta.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-33 -->
+            <article id="detalle-obra-33" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra33.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón Plegable de Acceso Vehicular</h2>
+                  <p>Trabajo de fabricación e instalación de un portón de cochera de apertura lateral (tipo acordeón) para maximizar el espacio de entrada.</p>
+                  <p>Descripción breve: Ejecución de un portón de múltiples hojas plegables en color gris oscuro. El diseño incluye recuadros verticales abiertos, listos para colocar vidrio o ventilación, con un estilo moderno y funcional. Ideal para entradas donde se necesita abrir completamente el vano.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-34 -->
+            <article id="detalle-obra-34" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra34.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón Principal de Diseño Curvo y Vidrio Azul</h2>
+                  <p>Trabajo de fabricación e instalación de un portón de doble hoja para acceso principal, con alto valor estético.</p>
+                  <p>DDescripción breve: Ejecución de un portón metálico en color gris oscuro. Su diseño destaca por dos grandes ventanas centrales con forma curva y vidrios de alto contraste. Adicionalmente, cuenta con paneles laterales que incorporan ventanas con el mismo vidrio azul, creando un conjunto moderno y unificado.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-35 -->
+            <article id="detalle-obra-35" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra35.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón de Garaje Moderno y Elegante</h2>
+                  <p>Trabajo de fabricación e instalación de un portón de acceso vehicular de gran tamaño, con un diseño moderno de paneles.</p>
+                  <p>Descripción breve: Ejecución de un portón metálico de doble o triple hoja en color blanco brillante. El diseño presenta paneles horizontales en alto relieve y tiras decorativas de acero pulido. Incluye cuatro mirillas rectangulares pequeñas con vidrio oscuro en la sección central, creando un aspecto limpio y luminoso.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-36 -->
+            <article id="detalle-obra-36" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra36.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Barandas Interiores Metálicas Sencillas</h2>
+                  <p>Trabajo de fabricación e instalación de pasamanos y barandas de seguridad para escaleras interiores residenciales o comerciales.</p>
+                  <p>Descripción breve: Ejecución de barandas metálicas en color gris, con un diseño simple de líneas horizontales paralelas. La baranda sigue el recorrido de la escalera de concreto y está diseñada para ofrecer una protección funcional con una estética limpia y discreta, utilizando un pasamanos tubular superior.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-37 -->
+            <article id="detalle-obra-37" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra37.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Estructura Metálica para Techo (En Construcción)</h2>
+                  <p>Trabajo de fabricación y montaje de la estructura principal de un techo a dos aguas sobre una edificación en obra gruesa.</p>
+                  <p>Descripción breve: Ejecución de la estructura de vigas y tijerales de acero, ensamblada sobre muros de ladrillo o bloques. La estructura, de color gris, está diseñada para soportar una cubierta y se encuentra en proceso de montaje, utilizando andamios y equipos de soldadura en el lugar.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-38 -->
+            <article id="detalle-obra-38" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra38.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Puerta y Ventanas con Rejas de Seguridad</h2>
+                  <p>Trabajo de fabricación e instalación de una puerta y ventanales con rejas, enfocados en la seguridad y el diseño unificado.</p>
+                  <p>Descripción breve: Ejecución de una puerta de acceso (o balcón) y una ventana con el mismo diseño de reja horizontal. Ambas estructuras son de metal en color gris claro. La puerta es alta, de múltiples paneles horizontales, y la ventana lateral tiene una reja protectora con un patrón de barras horizontales, con vidrios de color azul oscuro.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-39 -->
+            <article id="detalle-obra-39" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra39.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón y Puerta con Diamantes Decorativos</h2>
+                  <p>Trabajo de fabricación e instalación de un gran portón de garaje y una puerta de acceso peatonal, con detalles decorativos únicos.</p>
+                  <p>Descripción breve: Ejecución de un portón de tres hojas y una puerta auxiliar en color gris oscuro (casi negro). El diseño es de paneles horizontales lisos con pequeños insertos en forma de diamante, que probablemente serán cubiertos con acrílico o vidrio. El portón central incluye un manillón de acero pulido.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- detalle-obra-40 -->
+            <article id="detalle-obra-40" class="servicio-detalle" aria-hidden="true">
+              <a class="detalle-close" href="#" aria-label="Cerrar detalle">✕</a>
+              <div class="detalle-grid">
+                <div class="detalle-figure" style="background-image:url('assets/Obra40.jpg')"></div>
+                <div class="detalle-content">
+                  <h2>Portón de Seguridad con Diseño de Ventanas Verticales</h2>
+                  <p>Trabajo de fabricación e instalación de un amplio portón de cochera y una puerta peatonal, con un diseño unificado de seguridad.</p>
+                  <p>Descripción breve: Ejecución de un portón de doble hoja y una puerta auxiliar en color gris oscuro. Ambas piezas tienen un diseño de paneles horizontales y una o más franjas verticales con rejillas interiores, simulando ventanas. El portón incluye un manillón de acero pulido y cerradura de seguridad central.</p>
+                  <p>📱 Para más información: +51 901 165 242<br/>📩 estructurasmetalicaschota@gmail.com</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+  <script>
+    (function(){
+      const links = document.querySelectorAll('.servicio-link');
+      const detalles = document.querySelectorAll('.servicio-detalle');
+
+      function hideAll() {
+        detalles.forEach(d => {
+          d.classList.remove('active');
+          d.setAttribute('aria-hidden','true');
+        });
+      }
+
+      links.forEach(a => {
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          const targetId = this.dataset.target || this.getAttribute('href').replace('#','');
+          const target = document.getElementById(targetId);
+          if (!target) return;
+          if (target.classList.contains('active')) {
+            hideAll();
+            return;
+          }
+          hideAll();
+          target.classList.add('active');
+          target.setAttribute('aria-hidden','false');
+          setTimeout(()=> target.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+        });
+      });
+
+      document.querySelectorAll('.detalle-close').forEach(btn => {
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          hideAll();
+        });
+      });
+
+      hideAll();
+    })();
+  </script>
+
+  <!-- WhatsApp flotante (opcional) -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- Modal / formulario WhatsApp (widget tipo chat) -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche  — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script: abrir modal y enviar a WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242'; // actualizado
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        // focus primer input (si está disponible)
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        showModal();
+      });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) hideModal(); // click fuera del contenido
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+
+        // validar campos mínimos
+        if (!nombre || !telefono) {
+          alert('Por favor ingresa tu nombre y teléfono.');
+          return;
+        }
+
+        // construir texto
+        let text = `Hola, soy ${nombre}.`;
+        text += ` Mi teléfono es ${telefono}.`;
+        text += mensaje ? ` Mensaje: ${mensaje}.` : ' (sin mensaje).';
+        text += ' — Enviado desde la web de Estructuras Metálicas Chota';
+
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+
+        // abrir en nueva pestaña (WhatsApp web o app)
+        window.open(url, '_blank');
+        hideModal();
+        form.reset();
+      });
+    })();
+  </script>
+
+  <!-- Script: animar hero y entrada de página -->
+<script>
+  (function(){
+    // animar hero y entrada de página
+    document.documentElement.classList.add('page-enter'); // opcional: anima <html>
+    document.addEventListener('DOMContentLoaded', () => {
+      // aplicar clase hero
+      const hero = document.querySelector('.hero-page');
+      if (hero) hero.classList.add('animate-hero');
+      // animar contenedores
+      const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+      mainContainers.forEach(el => el.classList.add('page-enter'));
+      // eliminar clase de entrada después de la animación para permitir reuso
+      setTimeout(()=> {
+        document.documentElement.classList.remove('page-enter');
+        mainContainers.forEach(el=> el.classList.remove('page-enter'));
+      }, 1000);
+    });
+  })();
+</script>
+  <script src="site.js"></script>
+</body>
+</html>

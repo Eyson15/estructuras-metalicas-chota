@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Estructuras Metálicas Chota</title>
+  <meta name="description" content="Noticias y artículos — Estructuras Metálicas Chota" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+        /* Responsive for contexto-grid and context-cards */
+        .contexto-grid {
+          display: flex;
+          gap: 24px;
+          align-items: flex-start;
+        }
+        .contexto-left, .contexto-right {
+          min-width: 0;
+        }
+        .contexto-left {
+          flex: 2 1 0;
+        }
+        .contexto-right {
+          flex: 1 1 220px;
+          min-width: 180px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .context-cards {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        }
+        .context-card {
+          background: #fff;
+          color: #174a8c;
+          border-radius: 8px;
+          padding: 10px 14px;
+          box-shadow: 0 1px 6px 0 rgba(23,74,140,0.07);
+          min-width: 140px;
+          flex: 1 1 120px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .context-card .icon {
+          font-size: 1.5rem;
+          margin-right: 6px;
+        }
+        .context-card .meta strong {
+          font-size: 1rem;
+          color: #174a8c;
+        }
+        .context-card .meta .muted {
+          font-size: 0.93rem;
+          color: #496a80;
+        }
+        .context-stats {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 10px;
+        }
+        .context-stats .stat {
+          background: #f5fbff;
+          border-radius: 8px;
+          padding: 8px 12px;
+          text-align: center;
+          flex: 1 1 80px;
+          min-width: 80px;
+        }
+        .context-stats .value {
+          font-weight: 700;
+          color: #08304b;
+          font-size: 1.1rem;
+        }
+        .context-stats .label {
+          color: #3b5566;
+          font-size: .95rem;
+        }
+        .visual-graphic {
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto 10px auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .visual-graphic img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(13,71,161,0.08);
+        }
+        @media (max-width: 700px) {
+          .contexto-grid {
+            text-wrap: wrap;
+          }
+          .contexto-right {
+            min-width: 0;
+            width: 100%;
+            flex: unset;
+            gap: 10px;
+          }
+          .visual-graphic {
+            max-width: 100%;
+            margin-bottom: 8px;
+          }
+          .context-cards {
+            flex-direction: column;
+            gap: 8px;
+          }
+          .context-card {
+            min-width: 0;
+            width: 100%;
+            flex: unset;
+          }
+          .context-stats {
+            flex-direction: row;
+            gap: 6px;
+          }
+          .context-stats .stat {
+            min-width: 0;
+            flex: 1 1 60px;
+            padding: 7px 6px;
+          }
+        }
+    /* Responsive Blog Cards & Grid */
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .servicio-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(13,71,161,0.07);
+      margin-bottom: 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    @media (max-width: 700px) {
+      .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .servicio-card {
+        padding: 12px !important;
+      }
+    }
+    /* Responsive Blog Photos Grid */
+    .blog-photos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .blog-photo {
+      aspect-ratio: 4/3;
+      border-radius: 10px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .blog-photos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .blog-photo {
+        aspect-ratio: 1/1;
+      }
+    }
+    @media (max-width: 400px) {
+      .blog-photos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Responsive for investiga-section */
+    .investiga-grid {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .investiga-left {
+      flex: 2 1 0;
+      min-width: 0;
+    }
+    .investiga-right {
+      flex: 1 1 260px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .investiga-grid {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .investiga-right {
+        min-width: 0;
+        width: 100%;
+        flex: unset;
+        gap: 10px;
+      }
+    }
+    .contexto-grid {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .contexto-left, .contexto-right {
+      min-width: 0;
+    }
+    .contexto-left {
+      flex: 2 1 0;
+    }
+    .contexto-right {
+      flex: 1 1 220px;
+      min-width: 180px;
+    }
+    @media (max-width: 700px) {
+      .contexto-grid {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .contexto-right {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+    /* Ajustes generales para paddings y márgenes en móvil */
+    @media (max-width: 600px) {
+      .container, .container-inner, .investiga-inner {
+        padding-left: 4vw !important;
+        padding-right: 4vw !important;
+      }
+      .section-title, .servicios-subtitle, h3, h2 {
+        text-align: left !important;
+      }
+    }
+  </style>
+  <style>
+    /* Responsive Blog Cards & Grid */
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .servicio-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(13,71,161,0.07);
+      margin-bottom: 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    @media (max-width: 700px) {
+      .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .servicio-card {
+        padding: 12px !important;
+      }
+    }
+    /* Responsive Blog Photos Grid */
+    .blog-photos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .blog-photo {
+      aspect-ratio: 4/3;
+      border-radius: 10px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .blog-photos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .blog-photo {
+        aspect-ratio: 1/1;
+      }
+    }
+    @media (max-width: 400px) {
+      .blog-photos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="page-blog">
+  <div id="site-header"></div>
+  <script>fetch('header.html').then(r=>r.ok?r.text():Promise.reject()).then(t=>document.getElementById('site-header').innerHTML=t).catch(()=>{});</script>
+
+  <header class="hero-page sobre" style="background-image: url('assets/FondoParaTodos.png');">
+    <div class="content">
+      <h1>Blog</h1>
+      <p class="hero-sub">Noticias, proyectos y novedades del equipo.</p>
+    </div>
+  </header>
+
+  <main class="section-servicios full-bleed">
+    <div class="container">
+      <div class="container-inner">
+        <h2 class="section-title">Últimos artículos</h2>
+        <div class="servicios-subtitle">Consejos técnicos, casos de estudio y novedades del sector.</div>
+
+        <div class="servicios-grid" style="margin-top:20px;">
+          <article class="servicio-card animate-img" style="background:#fff;padding:18px;">
+            <h3 style="color:#0d47a1;margin-bottom:6px;">Cómo dimensionar una cubierta metálica</h3>
+            <p style="color:#333;">
+              Resumen breve: factores clave para dimensionar correctamente una cubierta — cargas permanentes y variables, pendiente,
+              selección de perfil estructural y recomendaciones de aislamiento térmico y evacuación de aguas.
+            </p>
+            <ul style="color:#333;margin:.6rem 0 0 1.1rem;padding:0 0 6px 0;">
+              <li>Perfil recomendado: IPN/HEA o viguetas según luz y carga.</li>
+              <li>Acero sugerido: S275 / S355 para estructuras; galvanizado para elementos expuestos.</li>
+              <li>Considerar aislación y ventilación para climas extremos.</li>
+            </ul>
+            <div style="margin-top:10px;display:flex;gap:10px;align-items:center;">
+              <a href="assets/guia-dimensionamiento-cubiertas.pdf" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Leer más (ver)</a>
+              <a href="assets/guia-dimensionamiento-cubiertas.pdf" download="Guia_Dimensionamiento_Cubiertas_Chota.pdf" class="btn-secondary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Descargar PDF</a>
+            </div>
+          </article>
+
+          <article class="servicio-card animate-img" style="background:#fff;padding:18px;">
+            <h3 style="color:#0d47a1;margin-bottom:6px;">Buenas prácticas en soldadura estructural</h3>
+            <p style="color:#333;">
+              Resumen breve: procedimientos y controles de calidad para soldadura estructural — preparación de juntas, técnicas recomendadas,
+              controles no destructivos y tratamientos post‑soldado.
+            </p>
+            <ul style="color:#333;margin:.6rem 0 0 1.1rem;padding:0 0 6px 0;">
+              <li>Técnicas: SMAW/GMAW/TIG según espesor y posición.</li>
+              <li>Precalentado y control térmico cuando aplique (según material).</li>
+              <li>Inspección: UT, MT o radiografía según criticidad.</li>
+            </ul>
+            <div style="margin-top:10px;display:flex;gap:10px;align-items:center;">
+              <a href="assets/guia-soldadura-estructural.pdf" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Leer más (ver)</a>
+              <a href="assets/guia-soldadura-estructural.pdf" download="Guia_Soldadura_Estructural_Chota.pdf" class="btn-secondary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Descargar PDF</a>
+            </div>
+          </article>
+
+          <article class="servicio-card animate-img" style="background:#fff;padding:18px;">
+            <h3 style="color:#0d47a1;margin-bottom:6px;">Caso: Proyecto PUCP — soluciones entregadas</h3>
+            <p style="color:#333;">
+              Resumen breve: alcance del proyecto, materiales empleados y lecciones aprendidas — includes selección de perfiles, detalles
+              de conexión y protección anticorrosiva aplicada.
+            </p>
+            <ul style="color:#333;margin:.6rem 0 0 1.1rem;padding:0 0 6px 0;">
+              <li>Perfiles principales: IPE/HEA según diseño.</li>
+              <li>Conexiones atornilladas y soldadas con especificación M 20.</li>
+              <li>Revestimiento: imprimación epóxica + pintura poliuretano.</li>
+            </ul>
+            <div style="margin-top:10px;display:flex;gap:10px;align-items:center;">
+              <a href="assets/caso-pucp-soluciones.pdf" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Leer más (ver)</a>
+              <a href="assets/caso-pucp-soluciones.pdf" download="Caso_PUCP_Soluciones_Chota.pdf" class="btn-secondary" style="text-decoration:none;padding:8px 12px;border-radius:6px">Descargar PDF</a>
+            </div>
+          </article>
+        </div>
+
+        <h3 style="margin-top:24px;">Fotos del proyecto</h3>
+
+        <!-- full-bleed fotos: se mantiene el contenido centrado mediante un wrapper -->
+        <section class="blog-photos-section full-bleed" aria-label="Fotos del proyecto">
+          <div class="container">
+            <div class="blog-photos-grid-wrap">
+              <div class="blog-photos-grid">
+                <div class="blog-photo" style="background-image:url('assets/Obra1Puerta.jpg')">
+                  <img src="assets/Obra1Puerta.jpg" alt="Obra 1" loading="lazy" />
+                </div>
+                <div class="blog-photo" style="background-image:url('assets/FabricacionyMontaje.png')">
+                  <img src="assets/FabricacionyMontaje.png" alt="Obra 2" loading="lazy" />
+                </div>
+                <div class="blog-photo" style="background-image:url('assets/Obra20.jpg')">
+                  <img src="assets/Obra20.jpg" alt="Obra 3" loading="lazy" />
+                </div>
+                <div class="blog-photo" style="background-image:url('assets/Obra4Puerta.jpg')">
+                  <img src="assets/Obra4Puerta.jpg" alt="Obra 4" loading="lazy" />
+                </div>
+                <div class="blog-photo" style="background-image:url('assets/FondoIndex.jpeg')">
+                  <img src="assets/FondoIndex.jpeg" alt="Fondo Para Todos" loading="lazy" />
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: INVESTIGACIÓN REGIONAL (full-bleed) -->
+        <section class="investiga-section full-bleed" aria-labelledby="investiga-title">
+          <div class="investiga-inner container">
+            <div class="investiga-wrap">
+              <div class="investiga-hero">
+                <h2 id="investiga-title" class="section-title animate-text">INVESTIGA: METÁLICAS EN CHOTA — CAJAMARCA, PERÚ</h2>
+                <p class="servicios-subtitle animate-text" style="max-width:1100px;margin:10px auto 0;">
+                  Panorama técnico y oportunidades para estructuras metálicas en Chota: contexto local, materiales recomendados,
+                  requisitos constructivos y casos de uso para agroindustria, educación e infraestructura pública.
+                  Incluye métricas reales, timeline de proyecto y guía de buenas prácticas.
+                </p>
+              </div>
+
+              <div class="investiga-grid">
+                <div class="investiga-left">
+                  <article class="investiga-card big animate-text contexto-card">
+  <div class="contexto-grid">
+    <div class="contexto-left">
+      <h3>Contexto y oportunidades</h3>
+      <p class="lead">
+        Chota (Cajamarca) presenta demanda sostenida de estructuras metálicas para naves agrícolas, centros educativos y obras municipales.
+        La combinación de altitud y variaciones térmicas obliga a soluciones con protección anticorrosiva y detalles constructivos específicos.
+      </p>
+
+      <div class="context-cards">
+        <div class="context-card">
+          <div class="icon">🏭</div>
+          <div class="meta">
+            <strong>Aplicaciones prioritarias</strong>
+            <div class="muted">Galpones, coberturas escolares y soportes industriales</div>
+          </div>
+        </div>
+
+        <div class="context-card">
+          <div class="icon">🔩</div>
+          <div class="meta">
+            <strong>Materiales recomendados</strong>
+            <div class="muted">Perfiles S275/S355, galvanizado, soldadura controlada</div>
+          </div>
+        </div>
+
+        <div class="context-card">
+          <div class="icon">⚙️</div>
+          <div class="meta">
+            <strong>Ventaja local</strong>
+            <div class="muted">Respuesta rápida y logística optimizada para la sierra norte</div>
+          </div>
+        </div>
+      </div>
+
+      <h4 style="margin-top:12px">Riesgos y mitigación</h4>
+      <ul class="context-list">
+        <li>Corrosión por humedad: usar galvanizado + pintura de protección.</li>
+        <li>Cambios térmicos: seleccionar perfiles con margen de deformación.</li>
+        <li>Montaje en altura: protocolos de seguridad y control dimensional.</li>
+      </ul>
+
+      <div class="context-cta">
+        <a href="contacto.html" class="btn-primary">Solicitar diagnóstico</a>
+        <a href="cotizacion.html" class="btn-secondary">Pedir cotización</a>
+      </div>
+    </div>
+
+    <div class="contexto-right">
+      <div class="visual-graphic" role="img" aria-label="Mapa y oportunidades">
+        <img src="assets/j.png" alt="Mapa local / visual" />
+      </div>
+
+      <div class="context-stats">
+        <div class="stat">
+          <div class="value">+150</div>
+          <div class="label">Proyectos</div>
+        </div>
+        <div class="stat">
+          <div class="value">95%</div>
+          <div class="label">Satisfacción</div>
+        </div>
+        <div class="stat">
+          <div class="value">5 años</div>
+          <div class="label">Garantía</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+                  <article class="investiga-card animate-text">
+                    <h3>Materiales recomendados y buenas prácticas</h3>
+                    <p>
+                      Recomendamos perfiles estructurales S275/S355, galvanizado por inmersión para piezas expuestas, tratamiento de soldadura
+                      y sellos en juntas. Para coberturas en clima intermitente usar paneles con aislamiento térmico.
+                    </p>
+                    <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
+                      <div style="background:#fff;padding:10px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,0.04);min-width:220px">
+                        <strong>Control de calidad</strong><div style="color:#496a80">Control dimensional y pruebas destructivas/selectivas.</div>
+                      </div>
+                      <div style="background:#fff;padding:10px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,0.04);min-width:220px">
+                        <strong>Protección anticorrosión</strong><div style="color:#496a80">Galvanizado, pinturas epóxicas y mantenimiento programado.</div>
+                      </div>
+                      <div style="background:#fff;padding:10px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,0.04);min-width:220px">
+                        <strong>Montaje seguro</strong><div style="color:#496a80">Protocolos de izaje y verificación in situ.</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="investiga-card animate-text">
+                    <h3>Casos de éxito y cifras</h3>
+                    <p>
+                      Hemos realizado más de 150 proyectos en la sierra norte, con tiempos típicos 5‑20 semanas. Clientes valoran
+                      rapidez, claridad técnica y garantía post‑instalación.
+                    </p>
+                    <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                      <div style="flex:1;min-width:140px;background:linear-gradient(180deg,#fff,#f5fbff);padding:12px;border-radius:8px;text-align:center;">
+                        <div style="font-weight:800;color:#08304b;font-size:1.28rem">+150</div>
+                        <div style="color:#3b5566;font-size:.95rem">Proyectos zona norte</div>
+                      </div>
+                      <div style="flex:1;min-width:140px;background:linear-gradient(180deg,#fff,#f5fbff);padding:12px;border-radius:8px;text-align:center;">
+                        <div style="font-weight:800;color:#08304b;font-size:1.28rem">5–20</div>
+                        <div style="color:#3b5566;font-size:.95rem">Semanas (típico)</div>
+                      </div>
+                      <div style="flex:1;min-width:140px;background:linear-gradient(180deg,#fff,#f5fbff);padding:12px;border-radius:8px;text-align:center;">
+                        <div style="font-weight:800;color:#08304b;font-size:1.28rem">5 años</div>
+                        <div style="color:#3b5566;font-size:.95rem">Garantía montaje / soldadura</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <aside class="investiga-right">
+                  <div class="investiga-card small animate-img">
+                    <div class="investiga-stats">
+                      <div class="stat"><div class="stat-value">+150</div><div class="stat-label">Proyectos</div></div>
+                      <div class="stat"><div class="stat-value">+85%</div><div class="stat-label">Satisfacción media</div></div>
+                      <div class="stat"><div class="stat-value">5 años</div><div class="stat-label">Garantía</div></div>
+                    </div>
+                  </div>
+
+                  <div class="investiga-card small animate-img">
+                    <div class="investiga-cta">
+                      <div class="cta-title">Informe técnico local</div>
+                      <p style="margin:.4rem 0 .8rem;color:#2f566e">Síntesis con recomendaciones para proyectos en Chota — ideal para municipios y empresas agrícolas.</p>
+                      <div style="display:flex;gap:8px;">
+                        <a class="btn-primary" href="contacto.html">Solicitar diagnóstico</a>
+                        <a class="btn-secondary" href="assets/informe-metalicas-chota.pdf" target="_blank" rel="noopener">Descargar PDF</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="investiga-card small investiga-quote animate-text">
+                    <strong>Expert insight</strong>
+                    <p style="margin:.6rem 0 0;color:#2f5568">“En la sierra, la durabilidad se gana con diseño apropiado y tratamiento anticorrosivo desde fábrica.” — Felipe Colunche</p>
+                  </div>
+                </aside>
+              </div>
+
+              <div class="investiga-cta-bar" role="region" aria-label="Llamado a la acción - estudio personalizado">
+                <div class="left">
+                  <div style="font-weight:800;color:#0d47a1;">¿Quieres un diagnóstico o cotizacion Chota?</div>
+                  <div style="color:#3b5566;font-size:.95rem">Diagnóstico inicial y propuesta técnica al correo.</div>
+                </div>
+
+                <div class="right" style="align-self:center;">
+                  <a href="contacto.html" class="btn-primary" style="display:inline-flex">Solicitar diagnóstico</a>
+                  <a href="cotizacion.html" class="btn-secondary" style="display:inline-flex">Solicitar cotización</a>
+                </div>
+              </div>
+
+              <div class="investiga-footer" style="margin-top:18px;">
+                <p style="color:#35506a">Información compilada a partir de experiencias locales, normas nacionales y colaboración con la Universidad. Para ver más casos y recursos técnicos, descarga el informe o contáctanos.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+  <!-- add this at end of body: small JS for animation on scroll -->
+  <script>
+    // staggers animate classes inside investiga-section when visible
+    (function(){
+      const container = document.querySelector('.investiga-section');
+      if (!container) return;
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          container.querySelectorAll('.animate-text, .animate-img').forEach((el,i)=>{
+            el.style.animationDelay = (i * 80) + 'ms';
+            el.classList.add('animate-text'); // some already have
+          });
+          io.disconnect();
+        });
+      }, {threshold: 0.12});
+      io.observe(container);
+    })();
+  </script>
+  <!-- small script: animate & ensure full-bleed works across sizes -->
+  <script>
+    (function(){
+      // apply animation delay for visible elements
+      const container = document.querySelector('.investiga-section');
+      if (!container) return;
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          container.querySelectorAll('.animate-text, .animate-img').forEach((el,i)=>{
+            el.style.animationDelay = (i * 70) + 'ms';
+            el.classList.add('animate-text');
+          });
+          io.disconnect();
+        });
+      }, {threshold: 0.12});
+      io.observe(container);
+    })();
+  </script>
+
+  
+  <!-- WhatsApp flotante (opcional) -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- Modal / formulario WhatsApp (widget tipo chat) -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche  — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script: abrir modal y enviar a WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242';
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        // focus primer input (si está disponible)
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        showModal();
+      });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) hideModal(); // click fuera del contenido
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+
+        // validar campos mínimos
+        if (!nombre || !telefono) {
+          alert('Por favor ingresa tu nombre y teléfono.');
+          return;
+        }
+
+        // construir texto
+        let text = `Hola, soy ${nombre}.`;
+        text += ` Mi teléfono es ${telefono}.`;
+        text += mensaje ? ` Mensaje: ${mensaje}.` : ' (sin mensaje).';
+        text += ' — Enviado desde la web de Estructuras Metálicas Chota';
+
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+
+        // abrir en nueva pestaña (WhatsApp web o app)
+        window.open(url, '_blank');
+        hideModal();
+        form.reset();
+      });
+    })();
+  </script>
+
+  <!-- Script: animar hero y entrada de página -->
+<script>
+  (function(){
+    // animar hero y entrada de página
+    document.documentElement.classList.add('page-enter'); // opcional: anima <html>
+    document.addEventListener('DOMContentLoaded', () => {
+      // aplicar clase hero
+      const hero = document.querySelector('.hero-page');
+      if (hero) hero.classList.add('animate-hero');
+      // animar contenedores
+      const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+      mainContainers.forEach(el => el.classList.add('page-enter'));
+      // eliminar clase de entrada después de la animación para permitir reuso
+      setTimeout(()=> {
+        document.documentElement.classList.remove('page-enter');
+        mainContainers.forEach(el=> el.classList.remove('page-enter'));
+      }, 1000);
+    });
+  })();
+</script>
+  <script src="site.js"></script>
+</body>
+</html>

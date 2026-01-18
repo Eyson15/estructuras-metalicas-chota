@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructuras Metálicas "Chota"</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('header.html')
+      .then(res => { if (!res.ok) throw new Error('No header'); return res.text(); })
+      .then(html => document.getElementById('site-header').innerHTML = html)
+      .catch(()=>{});
+  </script>
+
+  <!-- HERO -->
+<header class="hero-page hero-corporativo">
+  <video autoplay muted loop playsinline class="video-background">
+    <source src="assets/FondoIndex.mp4" type="video/mp4">
+  </video>
+  <div class="hero-corp-inner">
+    <div class="hero-corp-left">
+      <h1 class="hero-title">Estructuras Metálicas <span class="brand-strong">"Chota"</span></h1>
+      <p class="hero-sub">Diseñamos, fabricamos y construimos soluciones metálicas modernas con acabados de calidad.</p>
+      <div class="hero-buttons">
+        <a href="servicios.html" class="btn-primary">Nuestros servicios</a>
+        <a href="contacto.html" class="btn-secondary">Contáctanos</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- SERVICIOS (sección estilo tarjetas) -->
+  <section id="servicios" class="section-servicios">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span class="accent">servicios</span></h2>
+      <div class="servicios-grid">
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/InicioAnálisisyDiseñoEstructural.webp'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">ANÁLISIS Y DISEÑO ESTRUCTURAL</h3>
+            <a href="servicios.html#analisis" class="servicio-link btn-primary" aria-label="Ver análisis y diseño" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/InicioVerificaciónEstructural.jpeg'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">VERIFICACIÓN ESTRUCTURAL</h3>
+            <a href="servicios.html#verificacion" class="servicio-link btn-primary" aria-label="Ver verificación estructural" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/FabricacionyMontaje.png'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">FABRICACIÓN Y MONTAJE</h3>
+            <a href="servicios.html#montaje" class="servicio-link btn-primary" aria-label="Ver fabricación y montaje" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/Montaje.png'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">INSTALACIÓN DE TECHOS</h3>
+            <a href="servicios.html#coberturas" class="servicio-link btn-primary" aria-label="Ver instalación de techos" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/Puertasyventanas.png'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">DISEÑO Y FABRICACIÓN DE PUERTAS Y VENTANAS</h3>
+            <a href="servicios.html#puertas" class="servicio-link btn-primary" aria-label="Ver diseño y fabricación de puertas y ventanas" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+        <article class="servicio-card">
+          <div class="servicio-media" style="background-image:url('assets/ServisiosMantenimiento.png'); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <h3 class="servicio-title" style="text-align: center; color: white;">MANTENIMIENTO DE ESTRUCTURAS METÁLICAS</h3>
+            <a href="servicios.html#civiles" class="servicio-link btn-primary" aria-label="Ver mantenimiento de estructuras metálicas" style="text-align: center;">Ver servicio &gt;</a>
+          </div>
+        </article>
+      </div>
+      <div class="cta-center">
+        <a href="obras.html" class="btn-primary">Conoce nuestras obras &gt;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIALES / VALOR AGREGADO -->
+  <section class="diferenciales">
+    <div class="container">
+      <h2 class="diferenciales-title">¿Por qué elegirnos?</h2>
+      <div class="diferenciales-grid">
+        <div class="diferencial-card">
+          <img src="assets/expertise.png" alt="Experiencia" class="diferencial-icon" />
+          <h3>Experiencia comprobada</h3>
+          <p>Más de 3 años ejecutando proyectos metálicos en la región, con clientes satisfechos y obras de referencia.</p>
+        </div>
+        <div class="diferencial-card">
+          <img src="assets/high-quality.png" alt="Calidad" class="diferencial-icon" />
+          <h3>Calidad garantizada</h3>
+          <p>Utilizamos materiales certificados y procesos controlados para asegurar resultados duraderos y seguros.</p>
+        </div>
+        <div class="diferencial-card">
+          <img src="assets/solution.png" alt="Trabajo a medida" class="diferencial-icon" />
+          <h3>Soluciones a medida</h3>
+          <p>Adaptamos cada proyecto a las necesidades del cliente, brindando asesoría técnica y propuestas personalizadas.</p>
+        </div>
+        <div class="diferencial-card">
+          <img src="assets/icon-compromiso.png" alt="Cumplimiento" class="diferencial-icon" />
+          <h3>Cumplimiento y seguridad</h3>
+          <p>Respetamos plazos y normativas, priorizando la seguridad en obra y la satisfacción del cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUCIONAL RESUMIDO -->
+  <section class="institucional-resumido">
+    <div class="container institucional-resumido-flex">
+      <div class="institucional-resumido-text">
+        <h2>Compromiso y experiencia</h2>
+        <p>En Estructuras Metálicas "Chota" combinamos experiencia, tecnología y atención personalizada para ofrecer soluciones confiables y eficientes en cada proyecto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN / MINIMAPA -->
+  <section class="ubicacion">
+    <div class="container ubicacion-flex">
+      <div class="ubicacion-info">
+        <h2>Ubicación</h2>
+        <p><strong>Dirección:</strong> Anaximandro Vega N° 1053 Chota, Cajamarca, Perú</p>
+        <p><strong>Referencia:</strong> A pocos minutos de la Plaza de Armas de Chota.</p>
+      </div>
+      <div class="ubicacion-mapa">
+        <iframe src="https://www.google.com/maps?q=6%C2%B033'25.7%22S+78%C2%B038'54.6%22W&hl=es&z=14&output=embed" width="320" height="180" style="border:0; border-radius:12px; box-shadow:0 4px 18px rgba(13,71,161,0.10);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLAMADOS A LA ACCIÓN -->
+  <section class="cta-bloques">
+    <div class="container cta-bloques-flex">
+      <div class="cta-bloque">
+        <h3>¿Necesitas una estructura metálica segura y bien hecha?</h3>
+        <p>Solicita tu cotización sin compromiso y recibe atención personalizada.</p>
+        <a href="cotizacion.html#quote-form" class="btn-primary">Solicita tu cotización</a>
+      </div>
+      <div class="cta-bloque">
+        <h3>¿Tienes dudas?</h3>
+        <p>Contáctanos y te asesoramos en todo el proceso.</p>
+        <a href="contacto.html" class="btn-secondary">Contáctanos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       SECCIONES TEXTUALES: Resumen amplio y redirect a cada página
+       (texto sin imágenes, secciones separadas y alternadas color blanco/azul)
+  ========================= -->
+
+  <!-- SECCIÓN UNIFICADA: RESUMEN Y REDIRECCIÓN -->
+  <section class="overview-unificada">
+    <div class="container overview-unificada-grid">
+      <div class="overview-card">
+        <img src="assets/FabricacionGeneral1.png" alt="Equipo Estructuras Metálicas Chota" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Sobre Nosotros</h3>
+          <p>Conoce nuestro equipo, procesos y proyectos realizados. Más de 3 años de experiencia local y buenas prácticas técnicas.</p>
+          <a class="btn-overview" href="sobrenosotros.html">Ver más</a>
+        </div>
+      </div>
+      <div class="overview-card">
+        <img src="assets/InicioAnálisisyDiseñoEstructural.webp" alt="Servicios de análisis y diseño estructural" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Servicios</h3>
+          <p>Ofrecemos análisis y diseño estructural, fabricación, montajes y coberturas metálicas. Asesoría técnica y soluciones a medida.</p>
+          <a class="btn-overview" href="servicios.html">Ver más</a>
+        </div>
+      </div>
+      <div class="overview-card">
+        <img src="assets/Obra10.jpg" alt="Obras realizadas" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Obras</h3>
+          <p>Galería de proyectos: coberturas, puertas, ventanas, pasamanos, estructuras educativas e industriales. Calidad y adaptación a cada contexto.</p>
+          <a class="btn-overview" href="obras.html">Ver más</a>
+        </div>
+      </div>
+      <div class="overview-card">
+        <img src="assets/CoberturaMetalica1.jpg" alt="Cotizaciones personalizadas" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Cotizaciones</h3>
+          <p>Solicita cotización detallada y personalizada. Propuesta técnica y económica en 24 horas hábiles.</p>
+          <a class="btn-overview" href="cotizacion.html">Ver más</a>
+        </div>
+      </div>
+      <div class="overview-card">
+        <img src="assets/genrente.jpg" alt="Contacto gerente" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Contacto</h3>
+          <p>Coordina visitas técnicas, consultas comerciales y soporte post‑venta. Atención personalizada por Felipe Colunche.</p>
+          <a class="btn-overview" href="contacto.html">Ver más</a>
+        </div>
+      </div>
+      <div class="overview-card">
+        <img src="assets/CoberturaMetalica10.png" alt="Blog técnico" class="overview-card-img" loading="lazy">
+        <div class="overview-card-body">
+          <h3>Blog</h3>
+          <p>Artículos técnicos y guías prácticas: soldadura, selección de perfiles, protección anticorrosiva y más.</p>
+          <a class="btn-overview" href="blog.html">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="text-align: center; margin-top: 20px;">
+    <a class="btn-primary" href="assets/Manual-de-Uso-Estructuras-Metalicas-Chota.pdf" download="Manual_Usuario.pdf" style="padding: 10px 20px; text-decoration: none; background-color: #123245; color: white; border-radius: 5px;">Descargar Manual de Usuario</a>
+  </div>
+  <!-- fin secciones textuales -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      © <span id="footer-year"></span> Estructuras Metálicas Chota. Todos los derechos reservados.
+    </p>
+    <p class="dev">
+      Desarrollado por 
+      <a href="https://wa.me/51976212788?text=Hola%20Eyson,%20vengo%20desde%20tu%20trabajo%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20desarrollo%20de%20p%C3%A1ginas%20web%20para%20otros%20proyectos%20o%20negocios." target="_blank" rel="noopener" style="color:#ffeb3b; font-weight:700; text-decoration:none;">
+        Eyson C. Tapia
+      </a> 
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+      });
+    </script>
+  </div>
+</footer>
+
+
+  <!-- WhatsApp flotante (opcional) -->
+  <a id="open-wsp" class="whatsapp-fab" href="#" aria-label="WhatsApp" title="Enviar WhatsApp">
+    <img src="assets/whatsapp.png" alt="whatsapp" />
+  </a>
+
+  <!-- Modal / formulario WhatsApp (widget tipo chat) -->
+  <div id="wsp-modal" class="wsp-modal" aria-hidden="true" role="dialog" aria-label="Formulario WhatsApp">
+    <div class="wsp-modal-content">
+      <button class="wsp-close" aria-label="Cerrar formulario">✕</button>
+      <h3><img class="wsp-avatar" src="assets/genrente.jpg" alt="" /> Felipe Colunche  — Gerente General</h3>
+      <form id="wsp-form" class="wsp-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input type="tel" name="telefono" required placeholder="Ej: 9XXXXXXXX" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </label>
+        <div class="wsp-actions">
+          <button type="submit" class="btn-primary" title="Enviar por WhatsApp">Enviar</button>
+          <button type="button" class="btn-secondary wsp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script: abrir modal y enviar a WhatsApp -->
+  <script>
+    (function(){
+      const WA_NUMBER = '51901165242'; // cambiado a +51 901 165 242
+      const openBtn = document.getElementById('open-wsp');
+      const modal = document.getElementById('wsp-modal');
+      const closeBtn = modal.querySelector('.wsp-close');
+      const cancelBtn = modal.querySelector('.wsp-cancel');
+      const form = document.getElementById('wsp-form');
+
+      function showModal() {
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+        // focus primer input (si está disponible)
+        const first = modal.querySelector('input[name="nombre"]');
+        if (first) first.focus();
+      }
+      function hideModal() {
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      openBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        showModal();
+      });
+      closeBtn.addEventListener('click', function(e){ e.preventDefault(); hideModal(); });
+      cancelBtn.addEventListener('click', function(){ hideModal(); });
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) hideModal(); // click fuera del contenido
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        const nombre = (data.get('nombre') || '').trim();
+        const telefono = (data.get('telefono') || '').trim();
+        const mensaje = (data.get('mensaje') || '').trim();
+
+        // validar campos mínimos
+        if (!nombre || !telefono) {
+          alert('Por favor ingresa tu nombre y teléfono.');
+          return;
+        }
+
+        // construir texto
+        let text = `Hola, soy ${nombre}.`;
+        text += ` Mi teléfono es ${telefono}.`;
+        text += mensaje ? ` Mensaje: ${mensaje}.` : ' (sin mensaje).';
+        text += ' — Enviado desde la web de Estructuras Metálicas Chota';
+
+        const encoded = encodeURIComponent(text);
+        const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+
+        // abrir en nueva pestaña (WhatsApp web o app)
+        window.open(url, '_blank');
+        hideModal();
+        form.reset();
+      });
+    })();
+  </script>
+
+<!-- Script: animar hero y entrada de página -->
+<script>
+  (function(){
+    // animar hero y entrada de página
+    document.documentElement.classList.add('page-enter'); // opcional: anima <html>
+    document.addEventListener('DOMContentLoaded', () => {
+      // aplicar clase hero
+      const hero = document.querySelector('.hero-page');
+      if (hero) hero.classList.add('animate-hero');
+      // animar contenedores
+      const mainContainers = document.querySelectorAll('.container, .section-servicios, .servicios-detail');
+      mainContainers.forEach(el => el.classList.add('page-enter'));
+      // eliminar clase de entrada después de la animación para permitir reuso
+      setTimeout(()=> {
+        document.documentElement.classList.remove('page-enter');
+        mainContainers.forEach(el=> el.classList.remove('page-enter'));
+      }, 1000);
+    });
+  })();
+</script>
+  <script src="site.js"></script>
+
+  <script>
+    // añadir pequeñas animaciones al cargar la sección
+    (function(){
+      const root = document.documentElement;
+      document.addEventListener('DOMContentLoaded', ()=> {
+        document.querySelectorAll('.privacy-card, .intro-text, .privacy-cta, .content-wide').forEach((el,i)=>{
+          el.style.animationDelay = (i*80)+'ms';
+          el.classList.add('animate-text');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
